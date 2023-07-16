@@ -202,10 +202,10 @@ export default function Example() {
             </Typography>
             <div className={"md:flex justify-between md:space-y-0 space-y-[20px] md:space-x-[20px]"}>
                 <div className={"md:max-w-5xl"}>
-                    {next.map((item, index) => <><Typography type={"p"}
+                    {next.map((item, index) => <div key={index}><Typography type={"p"}
                                                              className={`text-on-surface-light dark:text-on-surface-dark max-w-6xl`}>
                         {item}
-                    </Typography><Space size={"sm"}/></>)}
+                    </Typography><Space size={"sm"}/></div>)}
                 </div>
                 <div
                     className={"md:w-4/12 w-full bg-surface-container-light dark:bg-surface-container-dark rounded-[16px] overflow-hidden"}>
@@ -213,7 +213,7 @@ export default function Example() {
                         className=" text-on-secondary-container-light dark:text-on-secondary-container-dark md:p-10 p-6">
 
                         {logos.map((item, i) => item?.logo ?
-                            <div className={" relative mb-2 w-4/12  inline-flex "}>
+                            <div key={i} className={" relative mb-2 w-4/12  inline-flex "}>
                                 <item.logo
                                     className={"text-on-surface-variant-light mx-4 w-[80px] h-[80px] md:h-[140px] md:w-full dark:text-on-surface-variant-dark"}/>
                             </div> : <div key={i}

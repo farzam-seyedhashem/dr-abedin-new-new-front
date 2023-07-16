@@ -6,7 +6,6 @@ import {SWRConfig} from "swr";
 import React, {useState} from "react";
 import NavigationBar from "../components/Appbars/NavigationBar";
 import MobileAppbarWithSearch from "@/components/Appbars/MobileAppbarWithSearch";
-import TopAppbar from "@/components/Appbars/TopAppbar";
 
 export default function MainLayout({
                                        modeType,
@@ -303,17 +302,17 @@ export default function MainLayout({
                 <div className={"md:flex bg-surface-container-light dark:bg-surface-container-dark"}>
                     <Appbar colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
 
-                    <NavigationBar/>
+                    {/*<NavigationBar/>*/}
                     <div className={"bg-surface-light dark:bg-surface-dark md:mr-auto w-full mt-[64px]"}>
                         {/*<MobileAppbar/>*/}
                         {/*<TopAppbar modeType={modeType}*/}
                         {/*           handleChangeMode={handleChangeMode}*/}
                         {/*           handleChangeColor={handleChangeColor}*/}
                         {/*           colorMode={colorMode} breadCrumbs={breadCrumbs} title={pageTitle}/>*/}
-                        <MobileAppbarWithSearch modeType={modeType}
-                                                handleChangeMode={handleChangeMode}
-                                                handleChangeColor={handleChangeColor}
-                                                colorMode={colorMode}/>
+                        {/*<MobileAppbarWithSearch modeType={modeType}*/}
+                        {/*                        handleChangeMode={handleChangeMode}*/}
+                        {/*                        handleChangeColor={handleChangeColor}*/}
+                        {/*                        colorMode={colorMode}/>*/}
                         <div>
                             {children}
                         </div>

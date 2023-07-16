@@ -35,8 +35,8 @@ export default function StoryComponent(props) {
             {story.storyType === "image" && <div className={"w-full  h-full relative"}>
 
                 <Image layout={"fill"} objectFit={"cover"} src={`${story.imageURL}`}/>
-                {story.description.map(item =>
-                    <p className={`w-[80%] ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
+                {story.description.map((item,i) =>
+                    <p key={i} className={`w-[80%] ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
                         {item.text}
                     </p>
                 )}
@@ -80,8 +80,8 @@ export default function StoryComponent(props) {
 
 
                 {/*</video>*/}
-                {story.description.map(item =>
-                    <p className={`w-[80%]  ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
+                {story.description.map((item,i) =>
+                    <p key={i} className={`w-[80%]  ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
                         {item.text}
                     </p>
                 )}
@@ -93,8 +93,8 @@ export default function StoryComponent(props) {
 
             {story.storyType === "text" &&
                 <div className={"w-full relative h-full  bg-surface-container-light  dark:bg-surface-container-dark"}>
-                    {story.description.map(item =>
-                        <p className={`w-[80%] ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
+                    {story.description.map((item,i) =>
+                        <p key={i} className={`w-[80%] ${item.position.y === "center" ? "top-1/2 transform -translate-y-1/2" : item.position.y === "top" ? "top-16" : story.link ? "bottom-16" : "bottom-4"} ${item.position.x === "center" ? "left-1/2 transform -translate-x-1/2" : item.position.x === "left" ? "left-4" : "right-4"} text-body-large ${item.withBg ? "bg-secondary-container-light text-on-secondary-container-light dark:bg-secondary-container-dark dark:text-on-secondary-container-dark rounded-[24px] py-4 px-4" : "text-on-surface-light dark:text-on-surface-dark"} absolute`}>
                             {item.text}
                         </p>
                     )}

@@ -29,7 +29,7 @@ function FilterChips({filters, filtersKey, handle}) {
     return (
         <div>
             {filters.map((filter, i) =>
-                    filter && <button onClick={() => handleFilter(filter)}
+                    filter && <button key={i} onClick={() => handleFilter(filter)}
                                       className={`${selectedItem.findIndex(item => item === filter) > -1 ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark h-8 pl-2 pr-4" : "border border-outline-light dark:border-outline-dark text-on-surface-variant-light dark:text-on-surface-variant-dark h-[30px] px-4"} rounded-lg mr-2 mb-3 text-sm inline-flex items-center tracking-[.1px] leading-[20px] font-medium`}>
                         {selectedItem.findIndex(item => item === filter) > -1 ?
                             <svg className="mr-2" xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +170,7 @@ export default function FilterChipsMobile({
                         </h2>
                         <div
                             className={"h-[40px] border-outline-light overflow-hidden dark:border-outline-dark rounded-full border divide-x divide-outline-light dark:divide-outline-dark flex w-full "}>
-                            {sortList.map(item => <button onClick={async () => {
+                            {sortList.map((item,i) => <button key={i} onClick={async () => {
                                 handleFilter("sort", [item.key])
                                 setSort(item.key)
                             }}

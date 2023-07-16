@@ -9,7 +9,6 @@ import {ModalSideSheet} from "@/components/SideSheet/ModalSideSheet";
 import SettingList from "@/components/settings/SettingList";
 import Image from "next/legacy/image";
 import useSWR from "swr";
-import {API} from "@/config";
 
 
 const services = [
@@ -327,7 +326,6 @@ export default function Example({title,breadCrumbs,modeType,colorMode,handleChan
 
     const [isOpenSearch, setIsOpenSearch] = useState(false)
     const [isShow, setIsShow] = useState(false)
-    const {data: searchData, error, isValidating, mutate} = useSWR(`${API}/search?s=${searchText}`)
 
     useEffect(() => {
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -467,121 +465,7 @@ export default function Example({title,breadCrumbs,modeType,colorMode,handleChan
                         type={"outline"}>
                         search
                     </Icon>
-                    {isOpenSearch && <div
-                        className={"absolute overflow-scroll rounded-b-[16px] pb-4 bg-surface-container-high-light dark:bg-surface-container-high-dark top-[48px] left-0 w-full h-[400px] z-[999]"}>
-                        {(searchData && searchText !== "") && searchData.data.inventories.length!==0&&<div className={"py-2 border-b dark:border-outline-dark border-outline-light"}>
-                            <div
-                                className={"flex justify-between pl-6 text-title-small pb-1 pr-4 text-on-surface-variant-light dark:text-on-surface-variant-dark font-medium items-center"}>
-                                <h2>Inventories Find</h2>
-                                <a className={"flex underline hover:text-on-primary-container-light dark:text-on-primary-container-dark items-center text-label-large text-primary-light dark:text-primary-dark "}>
 
-                                    Show More
-                                    {/*<Icon type={"outline"}>*/}
-                                    {/*    arrow_right*/}
-                                    {/*</Icon>*/}
-                                </a>
-                            </div>
-                            <ul>
-                                {(searchData && searchText !== "") && searchData.data.inventories.map((item, i) => (i < 4 || showAllInventory) &&
-                                    <li key={i} className={"text-black relative group h-fit"}>
-                                        <div
-                                            className={"group-hover:block inset-0 hidden absolute bg-on-surface-light dark:bg-on-surface-dark bg-opacity-[8%] dark:bg-opacity-[8%]"}/>
-                                        <Link className={"py-2 pr-4 pl-6 flex items-center"}
-                                              href={`/buy-used-cars/${item.VIN}`}>
-                                            <Icon
-                                                className={"text-on-surface-variant-light ml-4 dark:text-on-surface-variant-dark"}
-                                                type={"outline"}>
-                                                search
-                                            </Icon>
-                                            <div className={"w-7/12 mr-auto"}>
-                                                <h6 className={"text-on-surface-light w-full truncate w-full dark:text-on-surface-dark text-body-large"}>
-                                                    {item.Year + " " + item.Make + " " + item.Model}
-                                                </h6>
-                                            </div>
-                                            {/*<a className={" group-hover:block hidden text-primary-light dark:text-primary-dark underline"}>*/}
-                                            {/*    show detail*/}
-                                            {/*</a>*/}
-                                        </Link>
-                                    </li>
-                                )}
-                            </ul>
-                        </div>}
-                        {(searchData && searchText !== "") && searchData.data.makes.length!==0&&<div className={"py-2  border-b dark:border-outline-dark border-outline-light "}>
-                            <div
-                                className={"flex  justify-between pl-6 text-title-small pb-1 pr-4 text-on-surface-variant-light dark:text-on-surface-variant-dark font-medium items-center"}>
-                                <h2>Brands Find</h2>
-                                <a className={"text-on-surface-light dark:text-on-surface-dark"}>
-                                    <Icon type={"outline"}>
-                                        arrow_right
-                                    </Icon>
-                                </a>
-                            </div>
-                            <ul className={"grid grid-cols-4 gap-2 px-4"}>
-                                {(searchData && searchText !== "") && searchData.data.makes.map((item, i) => (i < 4 || showAllMake) &&
-                                    <div key={i} className={""}>
-
-                                        <Link
-                                            className={"flex justify-center hover:bg-on-surface-light dark:hover:bg-on-surface-dark dark:hover:bg-opacity-[8%] py-3 rounded-[8px] hover:bg-opacity-[8%]"}
-                                            href={`/buy-used-cars?make=${item}`}>
-                                            <div>
-                                                <div
-                                                    style={{backgroundColor: logos.brands.find(b => b.name.toLowerCase().includes(item.toLowerCase().replace("-", " ")))?.bg}}
-                                                    className={"rounded-full mx-auto flex items-center justify-center h-[48px] w-[48px]"}>
-                                                    <div className={"h-[36px] w-[36px]"}>
-                                                        <Image height={24} width={24} objectFit={"contain"}
-                                                               layout={"responsive"}
-                                                               src={"/brands-logo-new/" + (logos.brands.find(b => b.name.toLowerCase().includes(item.toLowerCase().replace("-", " ")))?.logo)}/>
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    className={"text-center text-on-surface-light dark:text-on-surface-dark text-label-medium mt-2 w-full"}>
-                                                    {item}
-                                                </div>
-                                            </div>
-
-                                        </Link>
-
-                                    </div>
-                                )}
-                            </ul>
-                        </div>}
-                        {(searchData && searchText !== "") && searchData.data.posts.length!==0&&<div className={"py-2 "}>
-                            <div
-                                className={"flex justify-between pl-6 text-title-small pb-1 pr-4 text-on-surface-variant-light dark:text-on-surface-variant-dark font-medium items-center"}>
-                                <h2>Posts Find</h2>
-                                <a className={"text-on-surface-light dark:text-on-surface-dark"}>
-                                    <Icon type={"outline"}>
-                                        arrow_right
-                                    </Icon>
-                                </a>
-                            </div>
-                            <ul>
-                                {(searchData && searchText !== "") && searchData.data.posts.map((item, i) => (i < 4 || showAllPosts) &&
-                                    <li key={i} className={"text-black relative group h-fit"}>
-                                        <div
-                                            className={"group-hover:block inset-0 hidden absolute bg-on-surface-light dark:bg-on-surface-dark bg-opacity-[8%] dark:bg-opacity-[8%]"}/>
-                                        <Link className={"py-2 pr-4 pl-6 flex items-center"}
-                                              href={`/blog/${item.slug}`}>
-                                            <Icon
-                                                className={"text-on-surface-variant-light mr-4 dark:text-on-surface-variant-dark"}
-                                                type={"outline"}>
-                                                search
-                                            </Icon>
-                                            <div className={"w-7/12 mr-auto"}>
-                                                <h6 className={"text-on-surface-light w-full truncate w-full dark:text-on-surface-dark text-body-large"}>
-                                                    {item.title}
-                                                </h6>
-                                            </div>
-                                            {/*<a className={" group-hover:block hidden text-primary-light dark:text-primary-dark underline"}>*/}
-                                            {/*    show detail*/}
-                                            {/*</a>*/}
-                                        </Link>
-                                    </li>
-                                )}
-                            </ul>
-                        </div>}
-                    </div>
-                    }
 
                 </div>
 
