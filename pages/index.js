@@ -15,7 +15,7 @@ export default function Home(props) {
                     <div
                         className={"md:mb-0 mb-4 px-6 py-6 w-full md:w-4/12 flex items-center bg-surface-container-highest-light dark:bg-surface-container-highest-dark h-fit md:h-[700px] rounded-[24px]"}>
                         <h1 className={"text-display-small md:text-display-large text-on-surface-light dark:text-on-surface-dark font-black"}>
-                            وب سایت رسمی دکتر بهزاد عابدین جراح زیبایی
+                            وب سایت رسمی دکتر بهزاد عابدین جراح پلاستیک بینی دارای بورد تخصصی گوش، حلق و بینی
                         </h1>
                         {/*<p className={"my-6"}>*/}
                         {/*    جهت دریافت نوب بر روی دکمه دریافت نوبت کلیک نمایید.*/}
