@@ -11,10 +11,10 @@ export default function Home(props) {
         <MainLayout {...other}>
             <div className={"px-4 md:px-6 pt-6"}>
                 <div
-                    className={"flex  bg-surface-light dark:bg-surface-dark md:space-x-2 md:space-x-reverse"}>
+                    className={"md:flex  bg-surface-light dark:bg-surface-dark md:space-x-2 md:space-x-reverse"}>
                     <div
-                        className={" px-6 py-6 w-4/12 flex items-center bg-surface-container-highest-light dark:bg-surface-container-highest-dark h-[700px] rounded-[24px]"}>
-                        <h1 className={"text-display-large text-on-surface-light dark:text-on-surface-dark font-black"}>
+                        className={"md:mb-0 mb-4 px-6 py-6 w-full md:w-4/12 flex items-center bg-surface-container-highest-light dark:bg-surface-container-highest-dark h-fit md:h-[700px] rounded-[24px]"}>
+                        <h1 className={"text-display-small md:text-display-large text-on-surface-light dark:text-on-surface-dark font-black"}>
                             وب سایت رسمی دکتر بهزاد عابدین جراح زیبایی
                         </h1>
                         {/*<p className={"my-6"}>*/}
@@ -24,7 +24,7 @@ export default function Home(props) {
                         {/*    دریافت نوبت*/}
                         {/*</Button>*/}
                     </div>
-                    <div className={"w-8/12"}>
+                    <div className={"md:w-8/12 w-full md:h-full h-[320px]"}>
                         <Slider/>
                     </div>
 

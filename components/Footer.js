@@ -9,15 +9,16 @@ export default function Footer() {
     const {t} = useTranslation('common')
     const navigation = {
         pages: [
-            {name: t("Main Page"), href: '/'},
-            {name: t("Services"), href: '/services'},
-            {name: t("Blog"), href: '/blog'},
-            {name: t("About US"), href: '/about-us'},
-            {name: t("Contact US"), href: '/contact-us'},
+            {name: "خانه", href: '/'},
+            {name: "خدمات", href: '/services'},
+            {name: "نوبت دهی آنلاین", href: '/services'},
+            {name: "بلاگ", href: '/blog'},
+            {name: "درباره ما", href: '/about-us'},
+            {name: "تماس با ما", href: '/contact-us'},
         ],
         social: [
             {
-                name: t("Chat") + " " + t("Whatsapp"),
+                name: "چت واتس اپ",
                 href: "#",
                 // eslint-disable-next-line react/display-name
                 icon: (props) => (
@@ -28,7 +29,7 @@ export default function Footer() {
                 ),
             },
             {
-                name: t("Page") + " " + t("Instagram"),
+                name: "پیج اینستاگرام",
                 href: "#",
                 // eslint-disable-next-line react/display-name
                 icon: (props) => (
@@ -42,7 +43,7 @@ export default function Footer() {
                 ),
             },
             {
-                name: t("Show on") + " " + t("Map"),
+                name: "نمایش بر روی نقشه",
                 href: "#",
                 // eslint-disable-next-line react/display-name
                 icon: (props) => (
