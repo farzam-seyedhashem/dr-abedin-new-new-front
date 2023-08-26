@@ -127,14 +127,14 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                         </Link>
                     </li>
                     <li className={"cursor-pointer"}>
-                        <a className={`${router.pathname === "/blog" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                        <a href={"/blog"} className={`${router.pathname === "/blog" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             بلاگ
                         </a>
                     </li>
                     <li className={"cursor-pointer"}>
-                        <a className={`${router.pathname === "/products" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                        <Link href={"/reserve"} className={`${router.pathname === "/products" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             نوبت دهی
-                        </a>
+                        </Link>
                     </li>
                     <li className={"cursor-pointer"}>
                         <Link href={"/about-us"} className={`${router.pathname === "/about-us" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>

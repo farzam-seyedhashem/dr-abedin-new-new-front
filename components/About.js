@@ -4,6 +4,8 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 import VideoThumb from '../public/video-thumb.jpg'
 import Button from "@/components/buttons/Button";
+import Link from "next/link";
+import GalleryDialog from "@/components/GalleryDialog";
 
 export default function About(props) {
     const {t} = useTranslation("index");
@@ -65,9 +67,10 @@ export default function About(props) {
     ]
     const [openVideo, setOpenVideo] = useState(false)
     const router = useRouter()
-
+    const [isGalleryOpen,setIsGalleryOpen] = useState(false)
     return (
         <>
+            <GalleryDialog openDialog={isGalleryOpen} setOpenDialog={setIsGalleryOpen}/>
             <div className="relative bg-surface-light dark:bg-surface-dark  overflow-hidden">
                 <div className="container mx-auto sm:pt-20 pt-16">
                     <div
@@ -139,7 +142,7 @@ export default function About(props) {
                         <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
                             <div
                                 className="rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
-                                <div>
+                                <Link href={"/reserve"}>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
                                         نوبت دهی
                                     </p>
@@ -147,11 +150,11 @@ export default function About(props) {
                                         با کلیک بر روی این قسمت میتوانید زمانی را برای دریافت نوبت و مراجعه به مطب
                                         انتخاب نمایید.
                                     </p>
-                                </div>
+                                </Link>
                             </div>
                             <div
                                 className="rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
-                                <div>
+                                <div onClick={()=>setIsGalleryOpen(true)}>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
                                         گالری تصاویر
                                     </p>
