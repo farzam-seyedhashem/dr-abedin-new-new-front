@@ -117,14 +117,14 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                 </div>
                 <ul className={"mr-6 flex text-title-small font-medium flex-grow items-center space-x-reverse space-x-4"}>
                     <li className={"cursor-pointer"}>
-                        <a className={`${router.pathname === "/" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                        <a href={"/"} className={`${router.pathname === "/" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             خانه
                         </a>
                     </li>
                     <li className={"cursor-pointer"}>
-                        <a className={`${router.pathname === "/services" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                        <Link href={"/services"} className={`${router.pathname === "/services" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             خدمات
-                        </a>
+                        </Link>
                     </li>
                     <li className={"cursor-pointer"}>
                         <a className={`${router.pathname === "/blog" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
@@ -142,9 +142,9 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                         </Link>
                     </li>
                     <li className={"cursor-pointer"}>
-                        <a className={`${router.pathname === "/contact-us" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                        <Link href={"/contact-us"} className={`${router.pathname === "/contact-us" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             تماس با ما
-                        </a>
+                        </Link>
                     </li>
 
                 </ul>
