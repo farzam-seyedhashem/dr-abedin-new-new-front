@@ -63,7 +63,7 @@ export default function Example() {
         <div className={"bg-background-light w-full h-full !rounded-[24px] overflow-hidden"}>
             <div className={"relative !rounded-[24px] overflow-hidden h-full bg-background-light  w-full"}>
                 <div
-                    className={"absolute z-[444] bg-black rounded-2xl overflow-hidden  flex items-center inset-0  h-full overflow-hidden"}>
+                    className={"absolute z-[444] bg-black rounded-2xl overflow-hidden  flex items-center inset-0  h-full"}>
 
                     {/*</div>*/}
                     {slides.data.map((item, i) => <div key={i}

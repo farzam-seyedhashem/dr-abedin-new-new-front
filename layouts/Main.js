@@ -6,6 +6,7 @@ import {SWRConfig} from "swr";
 import React, {useState} from "react";
 import NavigationBar from "../components/Appbars/NavigationBar";
 import MobileAppbarWithSearch from "@/components/Appbars/MobileAppbarWithSearch";
+import MobileAppbar from "@/components/Appbars/MobileAppbar";
 
 export default function MainLayout({
                                        modeType,
@@ -303,8 +304,8 @@ export default function MainLayout({
                     <Appbar colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
 
                     {/*<NavigationBar/>*/}
-                    <div className={"bg-surface-light dark:bg-surface-dark md:mr-auto w-full mt-[64px]"}>
-                        {/*<MobileAppbar/>*/}
+                    <div className={"bg-surface-light dark:bg-surface-dark md:mr-auto w-full md:mt-[64px]"}>
+                        <MobileAppbar colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
                         {/*<TopAppbar modeType={modeType}*/}
                         {/*           handleChangeMode={handleChangeMode}*/}
                         {/*           handleChangeColor={handleChangeColor}*/}
