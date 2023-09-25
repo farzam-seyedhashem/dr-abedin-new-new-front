@@ -85,8 +85,8 @@ export default function GalleryDialog({openDialog, setOpenDialog, gallerySelecte
                                         <div className={"grid md:grid-cols-3 grid-cols-1 gap-6"}>
                                             {images.length !== 0 && images.map((item, i) =>
                                                 <div key={i}
-                                                     className={"rounded-[32px] aspect-w-1 aspect-h-1  overflow-hidden relative w-full"}>
-                                                    <Image layout={"fill"} objectFit={"cover"}
+                                                     className={"rounded-[32px] aspect-w-1 aspect-h-1 dark:bg-surface-container-lowest-dark bg-surface-container-lowest-light  overflow-hidden relative w-full"}>
+                                                    <Image layout={"fill"} objectFit={"contain"}
                                                            src={item} alt={i}/>
                                                 </div>
                                             )}

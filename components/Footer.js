@@ -12,7 +12,7 @@ export default function Footer() {
             {name: "خانه", href: '/'},
             {name: "خدمات", href: '/services'},
             {name: "نوبت دهی آنلاین", href: '/services'},
-            {name: "بلاگ", href: '/blog'},
+            {name: "مقالات", href: '/blog'},
             {name: "درباره ما", href: '/about-us'},
             {name: "تماس با ما", href: '/contact-us'},
         ],

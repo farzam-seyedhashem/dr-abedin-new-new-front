@@ -9,7 +9,7 @@ import Image from 'next/legacy/image'
 export default function Home(props) {
     const {...other} = props
     const breadCrumbs = [
-        {name: "بلاگ", href: "/blog", current: true},
+        {name: "مقالات", href: "/blog", current: true},
     ]
     return (
         <MainLayout {...other}>
@@ -31,8 +31,8 @@ export default function Home(props) {
                         </div>
                     </div>
 
-                    <div className={"relative rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
-                        <Image layout={"fill"} objectFit={"cover"} src={"/dr-abedin-3.jpeg"}/>
+                    <div className={"relative bg-white rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
+                        <Image layout={"fill"} objectFit={"contain"} src={"/blog-thumbnail.jpg"}/>
                     </div>
                 </div>
                 <Space size={"normal"}/>

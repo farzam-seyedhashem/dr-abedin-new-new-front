@@ -6,7 +6,7 @@ import VideoThumb from '../public/video-thumb.jpg'
 import Button from "@/components/buttons/Button";
 import Link from "next/link";
 import GalleryDialog from "@/components/GalleryDialog";
-
+import  Icon from '@/components/assets/Icon'
 export default function About(props) {
     const {t} = useTranslation("index");
     const features = [
@@ -78,25 +78,25 @@ export default function About(props) {
                         <div
                             className={"aspect-h-9 aspect-w-16 md:aspect-h-14 md:aspect-w-9 lg:aspect-h-6 lg:aspect-w-8 h-fit rounded-[24px] md:rounded-[24px] overflow-hidden relative"}>
                             <Image priority={true} sizes={"50vw"} objectFit={"cover"} className={"z-10"} layout={"fill"}
-                                   src={VideoThumb}/>
-                            <div
-                                className={"absolute z-20 inset-0 flex items-center justify-center rounded-2xl bg-black bg-opacity-25"}>
-                                <button onClick={() => setOpenVideo(true)}
-                                        aria-label={"video-play"}
-                                        className={"relative  hover:bg-white hover:bg-opacity-[12%] transition duration-300 outline-none focus:border-2 focus:border-white rounded-3xl w-[92px] h-[92px] flex items-center justify-center"}>
-                                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M77.1461 39.9994C83.6068 52.0411 78.7255 62.9426 66.2666 66.2653C62.9426 78.7255 52.0411 83.6055 39.9994 77.1461C27.9577 83.6068 17.0561 78.7255 13.7334 66.2666C1.27453 62.9426 -3.60675 52.0411 2.85391 39.9994C-3.60675 27.9577 1.27453 17.0561 13.7334 13.7334C17.0561 1.27453 27.9577 -3.60675 39.9994 2.85391C52.0411 -3.60675 62.9426 1.27453 66.2653 13.7334C78.7255 17.0561 83.6055 27.9577 77.1461 39.9994Z"
-                                            fill="white"/>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className={"absolute"} height="40px"
-                                         viewBox="0 0 24 24" width="40px" fill="#000000">
-                                        <path d="M0 0h24v24H0V0z" fill="none"/>
-                                        <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/>
-                                    </svg>
-                                </button>
-                            </div>
+                                   src={"/dr-abedin-3.jpeg"}/>
+                            {/*<div*/}
+                            {/*    className={"absolute z-20 inset-0 flex items-center justify-center rounded-2xl bg-black bg-opacity-25"}>*/}
+                            {/*    <button onClick={() => setOpenVideo(true)}*/}
+                            {/*            aria-label={"video-play"}*/}
+                            {/*            className={"relative  hover:bg-white hover:bg-opacity-[12%] transition duration-300 outline-none focus:border-2 focus:border-white rounded-3xl w-[92px] h-[92px] flex items-center justify-center"}>*/}
+                            {/*        <svg width="80" height="80" viewBox="0 0 80 80" fill="none"*/}
+                            {/*             xmlns="http://www.w3.org/2000/svg">*/}
+                            {/*            <path*/}
+                            {/*                d="M77.1461 39.9994C83.6068 52.0411 78.7255 62.9426 66.2666 66.2653C62.9426 78.7255 52.0411 83.6055 39.9994 77.1461C27.9577 83.6068 17.0561 78.7255 13.7334 66.2666C1.27453 62.9426 -3.60675 52.0411 2.85391 39.9994C-3.60675 27.9577 1.27453 17.0561 13.7334 13.7334C17.0561 1.27453 27.9577 -3.60675 39.9994 2.85391C52.0411 -3.60675 62.9426 1.27453 66.2653 13.7334C78.7255 17.0561 83.6055 27.9577 77.1461 39.9994Z"*/}
+                            {/*                fill="white"/>*/}
+                            {/*        </svg>*/}
+                            {/*        <svg xmlns="http://www.w3.org/2000/svg" className={"absolute"} height="40px"*/}
+                            {/*             viewBox="0 0 24 24" width="40px" fill="#000000">*/}
+                            {/*            <path d="M0 0h24v24H0V0z" fill="none"/>*/}
+                            {/*            <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/>*/}
+                            {/*        </svg>*/}
+                            {/*    </button>*/}
+                            {/*</div>*/}
                         </div>
                         <div
                             className="rtl:text-right ltr:text-left md:pt-10 pt-8 pb-8 ltr:pl-8 ltr:pr-10 rtl:pr-8 rtl:pl-10">
@@ -139,10 +139,15 @@ export default function About(props) {
                         <h3 className="text-body-large mb-10   text-on-surface-light dark:text-on-surface-dark mt-2">
                             دریافت نوبت از جراح زیبایی بینی در تهران، دکتر بهزاد عابدین
                         </h3>
-                        <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
+                        <div className={"grid grid-cols-1 md:grid-cols-3 gap-2"}>
                             <div
-                                className="rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
+                                className="group relative rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
                                 <Link href={"/reserve"}>
+                                   <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
+                                    <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
+                                       calendar_month
+                                   </Icon>
+                                   </div>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
                                         نوبت دهی
                                     </p>
@@ -153,8 +158,29 @@ export default function About(props) {
                                 </Link>
                             </div>
                             <div
-                                className="rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
+                                className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
+                                <Link href={"/reserve"}>
+                                    <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
+                                        <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
+                                            schedule
+                                        </Icon>
+                                    </div>
+                                    <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
+                                       ساعت کاری
+                                    </p>
+                                    <p className="leading-[24px] text-on-secondary-container-light dark:text-on-secondary-container-dark">
+                                        با کلیک بر روی این قسمت میتوانید ساعت کاری مطب را مشاهده نمایید.
+                                    </p>
+                                </Link>
+                            </div>
+                            <div
+                                className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
                                 <div onClick={()=>setIsGalleryOpen(true)}>
+                                    <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
+                                        <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
+                                            image
+                                        </Icon>
+                                    </div>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
                                         گالری تصاویر
                                     </p>
@@ -180,6 +206,7 @@ export default function About(props) {
                             </video>
                         </div>
                     </div>
+
                     <button onClick={() => setOpenVideo(false)}
                             className={"bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl text-white md:h-12 md:w-12 h-10 w-10 flex items-center justify-center md:top-5 ltr:md:left-5 ltr:left-2 rtl:md:right-5 rtl:right-2 top-2  rounded-full absolute"}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"

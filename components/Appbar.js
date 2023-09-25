@@ -128,12 +128,17 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                     </li>
                     <li className={"cursor-pointer"}>
                         <a href={"/blog"} className={`${router.pathname === "/blog" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
-                            بلاگ
+                            مقالات
                         </a>
                     </li>
                     <li className={"cursor-pointer"}>
                         <Link href={"/reserve"} className={`${router.pathname === "/products" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             نوبت دهی
+                        </Link>
+                    </li>
+                    <li className={"cursor-pointer"}>
+                        <Link href={"/faq"} className={`${router.pathname === "/products" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                            سوالات متداول
                         </Link>
                     </li>
                     <li className={"cursor-pointer"}>
