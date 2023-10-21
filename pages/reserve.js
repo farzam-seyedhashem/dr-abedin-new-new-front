@@ -30,6 +30,7 @@ export default function Home(props) {
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
                                 {"صفحه دریافت نوبت آنلاین از دکتر بهزاد عابدین"}
                             </p>
+
                         </div>
                     </div>
 
@@ -43,8 +44,11 @@ export default function Home(props) {
                         <Typography className={"text-on-surface-light dark:text-on-surface-dark"} type={"h2"}>
                             فرم دریافت نوبت
                         </Typography>
-                        <Typography className={"mb-8 text-on-surface-light mt-2 dark:text-on-surface-dark"} type={"p"}>
+                        <Typography className={" text-on-surface-light mt-2 dark:text-on-surface-dark"} type={"p"}>
                             جهت دریافت نوبت فرم زیر را پر کنید
+                        </Typography>
+                        <Typography className={"mb-8 text-on-surface-light dark:text-on-surface-dark"}>
+                            {"ساعت کاری مطب در روز های ذوج ساعت ۱۵ تا ۱۹ می باشد."}
                         </Typography>
                         <div className={"grid grid-cols-1 md:grid-cols-2 gap-2 mb-4"}>
                             <TextField label={"نام و نام خانوادگی"}></TextField>

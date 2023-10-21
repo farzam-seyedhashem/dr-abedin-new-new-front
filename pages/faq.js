@@ -115,7 +115,7 @@ export default function Example(props) {
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
-                                درباره ما
+                                سوالات متداول
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
                                 {"درباره ی دکتر بهزاد عابدین و وبسایت رسمی ایشان بیشتر بدانید."}

@@ -158,21 +158,37 @@ export default function About(props) {
                                 </Link>
                             </div>
                             <div
-                                className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
+                                className="group relative rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
                                 <Link href={"/reserve"}>
                                     <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
                                         <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
-                                            schedule
+                                            quiz
                                         </Icon>
                                     </div>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
-                                       ساعت کاری
+                                        سوالات متداول
                                     </p>
                                     <p className="leading-[24px] text-on-secondary-container-light dark:text-on-secondary-container-dark">
-                                        با کلیک بر روی این قسمت میتوانید ساعت کاری مطب را مشاهده نمایید.
+                                      لیست سوالات متداول را میتوانید با کلیک بر روی این بخش مشاهده نمایید
                                     </p>
                                 </Link>
                             </div>
+                            {/*<div*/}
+                            {/*    className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">*/}
+                            {/*    <Link href={"/reserve"}>*/}
+                            {/*        <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>*/}
+                            {/*            <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>*/}
+                            {/*                schedule*/}
+                            {/*            </Icon>*/}
+                            {/*        </div>*/}
+                            {/*        <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">*/}
+                            {/*           ساعت کاری*/}
+                            {/*        </p>*/}
+                            {/*        <p className="leading-[24px] text-on-secondary-container-light dark:text-on-secondary-container-dark">*/}
+                            {/*            با کلیک بر روی این قسمت میتوانید ساعت کاری مطب را مشاهده نمایید.*/}
+                            {/*        </p>*/}
+                            {/*    </Link>*/}
+                            {/*</div>*/}
                             <div
                                 className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
                                 <div onClick={()=>setIsGalleryOpen(true)}>
