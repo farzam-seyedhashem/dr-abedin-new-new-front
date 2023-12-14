@@ -118,10 +118,10 @@ export default function About(props) {
                             </p>
                             <div className={"flex items-center justify-end"}>
 
-                                <Button className={"ml-2"}>
+                                <Button component={"a"} href={"/services"} className={"ml-2"}>
                                     خدمات
                                 </Button>
-                                <Button type={"tonal"}>
+                                <Button component={"a"} href={"/reserve"} type={"tonal"}>
                                     دریافت نوبت
                                 </Button>
                             </div>
@@ -159,7 +159,7 @@ export default function About(props) {
                             </div>
                             <div
                                 className="group relative rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
-                                <Link href={"/reserve"}>
+                                <Link href={"/faq"}>
                                     <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
                                         <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
                                             quiz

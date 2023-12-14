@@ -115,7 +115,7 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                     </svg>
 
                 </div>
-                <ul className={"mr-6 flex text-title-small font-medium flex-grow items-center space-x-reverse space-x-4"}>
+                <ul className={"mr-6 flex text-title-medium font-medium flex-grow items-center space-x-reverse space-x-4"}>
                     <li className={"cursor-pointer"}>
                         <a href={"/"} className={`${router.pathname === "/" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             خانه
@@ -158,7 +158,7 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                 {/*         transition-all duration-300 ml-6  relative  focus-within:w-[480px] w-[390px] h-[48px]  ${isOpenSearch ? "rounded-t-[16px] bg-surface-container-high-light dark:bg-surface-container-high-dark w-[480px]  border-b border-outline-light dark:border-outline-dark" : isShow ? "dark:bg-surface-container-high-dark bg-surface-container-high-light rounded-full " : "dark:focus-within:bg-surface-container-high-dark  rounded-full dark:hover:bg-surface-container-high-dark focus-within:border-0 hover:border-0 focus-within:bg-surface-container-high-light hover:bg-surface-container-high-light bg-surface-light dark:bg-surface-dark border border-outline-variant-light dark:border-outline-variant-dark"}`}>*/}
                 {/*    <input onChange={(e) => setSearchText(e.target.value)} onClick={() => setIsOpenSearch(true)}*/}
                 {/*           placeholder={"جستجو"}*/}
-                {/*           className={"h-full focus:ring-0 focus:outline-none text-body-large placeholder-on-surface-variant-light dark:placeholder-on-surface-variant-dark text-on-surface-light dark:text-on-surface-dark  pr-[56px] w-full bg-transparent"}/>*/}
+                {/*           className={"h-full focus:ring-0 focus:outline-none text-title-medium placeholder-on-surface-variant-light dark:placeholder-on-surface-variant-dark text-on-surface-light dark:text-on-surface-dark  pr-[56px] w-full bg-transparent"}/>*/}
                 {/*    <Icon*/}
                 {/*        className={"absolute text-on-surface-light dark:text-on-surface-dark top-1/2 transform -translate-y-1/2 right-4"}*/}
                 {/*        type={"outline"}>*/}

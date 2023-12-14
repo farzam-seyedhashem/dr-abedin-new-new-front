@@ -31,7 +31,7 @@ export default function Footer() {
                 ),
             },
             {
-                name: "تماس با ما",
+                name: "021-26601967",
                 href: "tel:+982126601967",
                 // eslint-disable-next-line react/display-name
                 icon: (props) => (

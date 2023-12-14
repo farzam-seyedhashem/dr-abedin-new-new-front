@@ -121,10 +121,10 @@ export default function Home(props) {
                                        href={"https://www.instagram.com/dr.behzadabedin/?next=%2F"}>
                                         اینستاگرام
                                     </a>
-                                    <a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}
-                                       href={"http://localhost:3000/contact-us#"}>
-                                        کانال تلگرام
-                                    </a>
+                                    {/*<a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}*/}
+                                    {/*   href={"http://localhost:3000/contact-us#"}>*/}
+                                    {/*    کانال تلگرام*/}
+                                    {/*</a>*/}
                                 </td>
                             </tr>
 
