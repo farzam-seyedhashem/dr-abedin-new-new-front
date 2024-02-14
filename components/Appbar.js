@@ -12,7 +12,7 @@ import useSWR from "swr";
 
 
 
-export default function Example({title, breadCrumbs, modeType, colorMode, handleChangeMode, handleChangeColor}) {
+export default function Example({setIsGalleryOpen,title, breadCrumbs, modeType, colorMode, handleChangeMode, handleChangeColor}) {
     const router = useRouter()
     const [isDark, setIsDark] = useState(false)
     const [isSettingOpen, setIsSettingOpen] = useState(false)
@@ -125,6 +125,11 @@ export default function Example({title, breadCrumbs, modeType, colorMode, handle
                         <Link href={"/services"} className={`${router.pathname === "/services" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
                             خدمات
                         </Link>
+                    </li>
+                    <li className={"cursor-pointer"}>
+                        <button onClick={()=>setIsGalleryOpen(true)} className={`${router.pathname === "/services" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>
+                            گالری تصاویر
+                        </button>
                     </li>
                     <li className={"cursor-pointer"}>
                         <a href={"/blog"} className={`${router.pathname === "/blog" ? "text-on-surface-light dark:text-on-surface-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}  hover:text-primary-light dark:hover:text-primary-dark`}>

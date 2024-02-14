@@ -7,6 +7,7 @@ import React, {useState} from "react";
 import NavigationBar from "../components/Appbars/NavigationBar";
 import MobileAppbarWithSearch from "@/components/Appbars/MobileAppbarWithSearch";
 import MobileAppbar from "@/components/Appbars/MobileAppbar";
+import GalleryDialog from "@/components/GalleryDialog";
 
 export default function MainLayout({
                                        modeType,
@@ -34,6 +35,7 @@ export default function MainLayout({
         }
     }
 
+    const [isGalleryOpen,setIsGalleryOpen] = useState(false)
     return (
 
         <>
@@ -301,11 +303,11 @@ export default function MainLayout({
 
 
                 <div className={"md:flex bg-surface-container-light dark:bg-surface-container-dark"}>
-                    <Appbar colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
-
+                    <Appbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
+                    <GalleryDialog openDialog={isGalleryOpen} setOpenDialog={setIsGalleryOpen}/>
                     {/*<NavigationBar/>*/}
                     <div className={"bg-surface-light dark:bg-surface-dark md:mr-auto w-full md:mt-[64px]"}>
-                        <MobileAppbar colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
+                        <MobileAppbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
                         {/*<TopAppbar modeType={modeType}*/}
                         {/*           handleChangeMode={handleChangeMode}*/}
                         {/*           handleChangeColor={handleChangeColor}*/}

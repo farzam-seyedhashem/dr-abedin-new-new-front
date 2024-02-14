@@ -11,7 +11,7 @@ import FullDialog from "@/components/dialogs/FullDialog";
 import DialogHead from "@/components/dialogs/DialogHead";
 import DialogContent from "@/components/dialogs/DialogContent";
 
-export default function MobileAppbar({modeType, colorMode, handleChangeMode, handleChangeColor}) {
+export default function MobileAppbar({modeType,setIsGalleryOpen, colorMode, handleChangeMode, handleChangeColor}) {
     const [isDark, setIsDark] = useState(false)
     const [isSettingOpen, setIsSettingOpen] = useState(false)
 
@@ -170,6 +170,32 @@ export default function MobileAppbar({modeType, colorMode, handleChangeMode, han
                             <path id="Path-16" fill="currentColor" stroke="none"
                                   d="M 12.755175 17.453051 C 12.802635 17.453051 12.850094 17.453051 12.897553 17.46887 C 12.850094 17.453051 12.802635 17.453051 12.755175 17.453051 Z"/>
                         </g>
+                    </svg>
+                )
+            },
+        },
+        {
+            name: 'گالری تصاویر',
+            description: 'Get a better understanding of where your traffic is coming from.',
+            // href: '/services',
+            action:()=>{
+                setIsGalleryOpen(true)
+                setOpen(false)
+            },
+            icon: (props) => {
+                return (
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path
+                            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/>
+                    </svg>
+
+                )
+            },
+            iconField: (props) => {
+                return (
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path
+                            d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Z"/>
                     </svg>
                 )
             },
@@ -642,22 +668,18 @@ export default function MobileAppbar({modeType, colorMode, handleChangeMode, han
                                     </IconButton>
                                     <ul>
                                         {!menuSelected && menu.map((item, i) =>
-                                            item.subItems ?
-                                                <li className={`rounded-full group ${(router.pathname === item.href || (item.subItems && item.subItems.find(subItem => subItem.href === router.pathname))) ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark hover:text-on-surface-light dark:hover:text-on-surface-dark hover:bg-surface-variant-light dark:hover:bg-surface-variant-dark"}`}
+                                            !item.href ?
+                                                <li className={`text-right h-[48px] flex tracking-[0.1px] leading-[24px] items-center px-4 rounded-full group ${(router.pathname === item.href || (item.subItems && item.subItems.find(subItem => subItem.href === router.pathname))) ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark hover:text-on-surface-light dark:hover:text-on-surface-dark bg-opacity-[5%] dark:bg-opacity-[5%] hover:bg-surface-variant-light dark:hover:bg-surface-variant-dark"}`}
                                                     key={i}>
-                                                    <button
-                                                        className={"w-full h-[48px] tracking-[0.1px] leading-[24px] items-center flex  px-4"}
-                                                        onClick={() => setMenuSelected(i)} key={i}>
-                                                        {/*<item.icon*/}
-                                                        {/*    className={`mr-3 ${(router.pathname === item.href || (item.subItems && item.subItems.find(subItem => subItem.href === router.pathname))) ? "material-symbols-menu-item-fill text-on-secondary-container-light dark:text-on-secondary-container-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark "}`}/>*/}
-                                                        <span className={"flex-grow text-left"}>
-                                                                    {item.name}
-                                                                </span>
-                                                        {item.subItems && <span
-                                                            className="transition duration-200 material-symbols-outlined material-symbols-menu-item group-hover:material-symbols-menu-item-hover">
-                                                                    arrow_forward
-                                                                </span>}
-                                                    </button>
+                                                    {/*<item.icon*/}
+                                                    {/*    className={`mr-3 ${(router.pathname === item.href || (item.subItems && item.subItems.find(subItem => subItem.href === router.pathname))) ? "text-on-secondary-container-light dark:text-on-secondary-container-dark material-symbols-menu-item-fill" : "text-on-surface-variant-light dark:text-on-surface-variant-dark"}`}/>*/}
+                                                    <button onClick={item.action} className={"flex-grow text-right"}>
+                                                            {item.name}
+                                                            </button>
+                                                    {item.subItems && <span
+                                                        className="transition duration-200 material-symbols-outlined material-symbols-menu-item group-hover:material-symbols-menu-item-hover">
+                                                                arrow_forward
+                                                            </span>}
                                                 </li>
 
                                                 : <Link locale={false} key={i} href={item.href}>
@@ -693,6 +715,7 @@ export default function MobileAppbar({modeType, colorMode, handleChangeMode, han
                                                             </span>
                                                 </button>
                                             </li>
+
                                             {menu[menuSelected].subItems.map((item, i) =>
                                                 <Link locale={false} key={i} href={item.href}>
                                                     <li className={`h-[48px] ml-[40px] flex tracking-[0.1px] leading-[24px] items-center px-4 rounded-full group ${(router.pathname === item.href) ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : "text-on-surface-variant-light dark:text-on-surface-variant-dark hover:text-on-surface-light dark:hover:text-on-surface-dark hover:bg-surface-variant-light bg-opacity-[5%] dark:bg-opacity-[5%] dark:hover:bg-surface-variant-dark"}`}
