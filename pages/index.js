@@ -35,16 +35,16 @@ const [openVideo,setOpenVideo] = useState(false)
                 </div>
                 <div className={"mt-20 container grid grid-cols-4 gap-4 mx-auto"}>
                     <div className={"relative rounded-[16px] overflow-hidden"}>
-                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/index-img/1-1.JPG"}/>
+                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/1-e.jpeg"}/>
                     </div>
                     <div className={"relative rounded-[16px] overflow-hidden"}>
-                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/index-img/1-2.JPG"}/>
+                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/2-e.jpeg"}/>
                     </div>
                     <div className={"relative rounded-[16px] overflow-hidden"}>
-                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/index-img/1-3.JPG"}/>
+                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/3-e.jpeg"}/>
                     </div>
                     <div className={"relative rounded-[16px] overflow-hidden"}>
-                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/index-img/1-4.JPG"}/>
+                        <Image layout={"responsive"} objectFit={"cover"} width={1920} height={1240} src={"/4-e.jpeg"}/>
                     </div>
                 </div>
             </div>

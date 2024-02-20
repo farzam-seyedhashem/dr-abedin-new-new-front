@@ -7,7 +7,7 @@ export default function GalleryDialog({openDialog, setOpenDialog, gallerySelecte
     const [images, setImages] = useState([])
     useEffect(()=>{
         let imageList = []
-        for (let i = 1; i < 37; i++) {
+        for (let i = 50; i > 0; i--) {
             imageList.push(`/dr-abedin-gallery/${i}.jpeg`)
         }
         setImages(imageList)
