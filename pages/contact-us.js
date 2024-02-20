@@ -13,7 +13,7 @@ export default function Home(props) {
     ]
     return (
         <MainLayout {...other}>
-            <div className={"px-4 md:px-6 pt-6"}>
+            <div className={"px-4 md:md:px-6 px-4 pt-6"}>
                 {/*<PageHeader breadcrumbs={breadCrumbs} title={""}*/}
                 {/*            shortDescription={""}*/}
                 {/*            imageAlt={"تماس با ما"} imageUrl={"/contact-us-top.jpg"}/>*/}
@@ -44,26 +44,27 @@ export default function Home(props) {
                     </Typography>
                     <Space size={"xs"}/>
                     <div
-                        className={"rounded-2xl border border-surface-variant-light dark:border-surface-variant-dark md:max-w-3xl overflow-x-hidden"}>
-                        <table className={"w-full"}>
+                        className={"rounded-2xl overflow-hidden w-full  border border-surface-variant-light dark:border-surface-variant-dark md:max-w-3xl overflow-x-hidden"}>
+                        <div className={"flex overflow-scroll whitespace-nowrap"}>
+                        <table className={"w-full whitespace-normal"}>
                             <thead className={""}>
                             <tr className={`bg-surface-light dark:bg-surface-dark dark:bg-surface-1-dark divide-x-reverse divide-x divide-surface-variant-light dark:divide-surface-variant-dark`}>
-                                <th className={" px-6 py-4 text-on-surface-light dark:text-on-surface-dark font-medium"}>
+                                <th className={" md:px-6 px-4 py-4 text-on-surface-light dark:text-on-surface-dark font-medium"}>
                                     عنوان
                                 </th>
-                                <th className={"py-4 px-6 text-on-surface-light dark:text-on-surface-dark font-medium"}>
+                                <th className={"py-4 md:px-6 px-4  text-on-surface-light dark:text-on-surface-dark font-medium"}>
                                     اطلاعات
                                 </th>
                             </tr>
                             </thead>
                             <tbody
-                                className={"bg-surface-light dark:bg-surface-dark w-full text-right"}>
+                                className={"text-body-small  md:text-body-large bg-surface-light dark:bg-surface-dark w-full text-right"}>
                             <tr>
-                                <td className={`px-6 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
+                                <td className={`md:px-6 px-4 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
                                     تلفن
                                 </td>
                                 <td
-                                    className={`px-6 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
+                                    className={`md:px-6 px-4  font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4  text-on-surface-light dark:text-on-surface-dark`}>
                                     <a dir={"ltr"} className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}
                                        href={"tel:02126601967"}>
                                         {"+21-26601967"}
@@ -77,21 +78,21 @@ export default function Home(props) {
 
                             </tr>
                             <tr>
-                                <td className={`px-6 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
+                                <td className={`md:px-6 px-4 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
                                     ساعت پاسخگویی
                                 </td>
                                 <td
-                                    className={`px-6 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
+                                    className={`md:px-6 px-4 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
                                     {"شنبه تا چهارشنبه ساعت ۱۵ تا ۱۹"}
                                 </td>
 
                             </tr>
                             <tr>
-                                <td className={`px-6 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark  font-normal`}>
+                                <td className={`md:px-6 px-4 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark  font-normal`}>
                                     ایمیل
                                 </td>
                                 <td
-                                    className={`px-6 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light  dark:text-on-surface-dark`}>
+                                    className={`md:px-6 px-4 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light  dark:text-on-surface-dark`}>
                                     <a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}
                                        href={"mailto:dr.behzad_adbedin@yahoo.com"}>
                                     dr.behzad_adbedin@yahoo.com
@@ -99,27 +100,27 @@ export default function Home(props) {
                                 </td>
                             </tr>
                             <tr>
-                                <td className={`px-6 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light  dark:text-on-surface-variant-dark font-normal`}>
+                                <td className={`md:px-6 px-4 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light  dark:text-on-surface-variant-dark font-normal`}>
                                     آدرس مطب
                                 </td>
                                 <td
-                                    className={`px-6 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
+                                    className={`md:px-6 px-4  font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
                                     {" تهران، خیابان دکتر علی شریعتی، بالاتر از پل صدر، روبروی سفارت واتیکان، ساختمان رسا، پلاک ۱۷۳۰، طبقه اول، واحد ۲"}
                                 </td>
                             </tr>
                             <tr>
-                                <td className={`px-6 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
+                                <td className={`md:px-6 px-4 py-4 border-t border-surface-variant-light dark:border-surface-variant-dark text-on-surface-variant-light dark:text-on-surface-variant-dark font-normal`}>
                                     شبکه اجتماعی
                                 </td>
                                 <td
-                                    className={`px-6  font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
+                                    className={`md:px-6 px-4  font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
                                     <a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}
                                        href={"http://localhost:3000/contact-us#"}>
                                         واتس اپ
                                     </a>
                                     <a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}
                                        href={"https://www.instagram.com/dr.behzadabedin/?next=%2F"}>
-                                        اینستاگرام
+                                        اینستاگرام (dr.behzadabedin)
                                     </a>
                                     {/*<a className={"md:py-0 py-[1px] px-1 inline-flex text-primary-light dark:text-primary-dark hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark hover:underline"}*/}
                                     {/*   href={"http://localhost:3000/contact-us#"}>*/}
@@ -132,6 +133,7 @@ export default function Home(props) {
                             </tbody>
 
                         </table>
+                        </div>
                     </div>
 
                 </div>
