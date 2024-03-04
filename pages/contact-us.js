@@ -26,7 +26,7 @@ export default function Home(props) {
                                 تماس با ما
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"دکتر بهزاد عابدین جراح و متخصص گوش، حلق، بيني و جراح پلاستيك بيني و صورت مي باشد در این صفحه راه های دیگر ارتباطی با ایشان ذکر گردیده."}
+                                {"                                در این صفحه راه های ارتباطی با دکتر بهزاد عابدین، جراح و متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران ذکر شده است"}
                             </p>
                         </div>
                     </div>

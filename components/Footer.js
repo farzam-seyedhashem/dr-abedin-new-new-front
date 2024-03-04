@@ -100,7 +100,7 @@ export default function Footer() {
                             </div>
                         </div>
                         <p className="text-on-surface-light dark:text-on-surface-dark  my-4 max-w-4xl text-body-large">
-                            {"دکتر بهزاد عابدین متولد ١٣٦١ در تهران، داراي درجه دانشنامه (بورد تخصصي)، عضو انجمن گوش، حلق، بيني و جراحان سر و گردن ايران و عضو انجمن راینولوژی ایران مي باشند."}
+                            {"دکتر بهزاد عابدین، دارای درجه دانشنامه ( بورد تخصصی ) در جراحی گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران"}
                         </p>
                         <ul className="flex flex-wrap gap-y-4 gap-x-6">
                             {navigation.pages.map((item) => (

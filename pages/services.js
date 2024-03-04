@@ -16,7 +16,17 @@ export default function Home(props) {
         {name: "تماس با ما", href: "/contact-us", current: true},
     ]
     const drFeatures = [
-        "جراحي زيبايي بيني و سپتوم (سپتورينوپلاستي)","جراحي پلك (بلفاروپلاستي)","جراحي زيبايي گوش (اتوپلاستي)","پروتز چانه (منتوپلاستي)","اصلاح انحراف بيني و بازسازي راه هوايي (سپتوپلاستي)","جراحي آندوسكوپيك بيني و سينوس (FESS)","جراحي لوزه در اطفال و بزرگسالان","جا اندازي شكستگي بيني","مشاوره قبل از عمل همگي اعمال جراحي توسط دكتر عابدين.","انجام همه مراقبت هاي پس از جراحي از قبيل تعويض چسب بيني، كشيدن بخيه ها و … توسط ايشان.","انجام تمامي معاينات گوش و حلق و بيني از قبيل معاينه و ساكشن گوش با استفاده از ميكروسكوپ، آندوسكوپي تشخيصي بيني و حنجره و بررسي و تشخيص انواع مشكلات شايع از قبيل مشكلات تنفسي و انسداد بيني، آپنه و خروپف خواب شبانه، كاهش شنوايي، سرگيجه، آلرژي فصلي، سينوزيت و دردهاي صورت، بيماري هاي تيروئيد و غدد بزاقي، بررسي علل گرفتگي صدا و مشكلات تكلم و ساير بيماري هاي مربوط به تخصص جراحي گوش، حلق، بيني و جراحي سر و گردن و جراحي پلاستيك بيني و صورت."
+        "جراحي زيبايي بيني و سپتوم (سپتورينوپلاستي)",
+        "اصلاح دفرمیتی گوش (اتوپلاستي)",
+        "پروتز چانه (منتوپلاستي)",
+        "جراحي پلك (بلفاروپلاستي)",
+        "اصلاح انحراف بيني و بازسازي راه هوايي (سپتوپلاستي)",
+        "جراحي آندوسكوپيك بيني و سينوس (FESS)",
+        "جراحي لوزه در اطفال و بزرگسالان",
+        "جراحی جا اندازي شكستگي بيني",
+        "مشاوره قبل از عمل همگي اعمال جراحي توسط دكتر عابدين.",
+        "انجام همه مراقبت هاي پس از جراحي از قبيل تعويض چسب بيني، كشيدن بخيه ها و … توسط ايشان.",
+        "انجام تمامي معاينات گوش و حلق و بيني از قبيل معاينه و ساكشن گوش با استفاده از ميكروسكوپ، آندوسكوپي تشخيصي بيني و حنجره و بررسي و تشخيص انواع مشكلات شايع از قبيل مشكلات تنفسي و انسداد بيني، آپنه و خروپف خواب شبانه، كاهش شنوايي، سرگيجه، آلرژي فصلي، سينوزيت و دردهاي صورت، بيماري هاي تيروئيد و غدد بزاقي، بررسي علل گرفتگي صدا و مشكلات تكلم و ساير بيماري هاي مربوط به تخصص جراحي گوش، حلق، بيني و جراحي سر و گردن."
     ]
     return (
         <MainLayout {...other}>
@@ -32,7 +42,7 @@ export default function Home(props) {
                                 خدمات دکتر بهزاد عابدین
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"فهرست خدمات و جراحي هاي ارائه شده توسط دكتر بهزاد عابدين جراح و متخصص گوش، حلق، بيني، جراحي سر و گردن و جراح پلاستيك بيني و صورت"}
+                                {"فهرست خدمات و جراحی های انجام شده توسط دکتر بهزاد عابدین، جراح و متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران"}
                             </p>
                         </div>
                     </div>
@@ -51,14 +61,14 @@ export default function Home(props) {
                         <li>
                             <Link locale={false} href={"/services#h1"}>
                                 <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"اعمال جراحي زيبايي"}
+                                    {"اعمال جراحي بینی و صورت"}
                                 </div>
                             </Link>
                         </li>
                         <li>
                             <Link locale={false} href={"/services#h2"}>
                                 <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light  dark:text-primary-dark font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"ساير اعمال جراحي"}
+                                    {"اعمال جراحی درمانی"}
                                 </div>
                             </Link>
                         </li>
@@ -80,7 +90,7 @@ export default function Home(props) {
                     </ul>
                     <h2 id={"h1"}
                         className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"اعمال جراحي زيبايي"}
+                        {"اعمال جراحي بینی و صورت"}
                     </h2>
                     <ul className={"list-star-rtl mr-[22px]"}>
                         {drFeatures.map((item,i) => i<=3 && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
@@ -91,7 +101,7 @@ export default function Home(props) {
                     </ul>
                     <h2 id={"h2"}
                         className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"ساير اعمال جراحي"}
+                        {"اعمال جراحی درمانی"}
                     </h2>
                     <ul className={"list-star-rtl mr-[22px]"}>
                         {drFeatures.map((item,i) =>  (i>3 && i<=7) && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
