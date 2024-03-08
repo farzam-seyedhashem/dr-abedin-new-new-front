@@ -134,7 +134,7 @@ export default function About(props) {
                         <h2 className="text-headline-medium font-black text-on-surface-light dark:text-on-surface-dark">
                             {/*<span className="inline">{t("Sale of different types of stones")}</span>{" "}*/}
                             {/*<span className="inline">{t("Chalipa")}</span>*/}
-                            دریافت نوبت مشاوره جراحی زیبایی بینی در تهران
+                            دریافت نوبت مشاوره جراحی بینی در تهران
                         </h2>
                         <h3 className="text-body-large mb-10   text-on-surface-light dark:text-on-surface-dark mt-2">
                             دریافت نوبت از جراح زیبایی بینی در تهران، دکتر بهزاد عابدین
