@@ -137,7 +137,7 @@ export default function About(props) {
                             دریافت نوبت مشاوره جراحی بینی در تهران
                         </h2>
                         <h3 className="text-body-large mb-10   text-on-surface-light dark:text-on-surface-dark mt-2">
-                            دریافت نوبت از جراح زیبایی بینی در تهران، دکتر بهزاد عابدین
+                            دریافت نوبت از جراح بینی در تهران، دکتر بهزاد عابدین
                         </h3>
                         <div className={"grid grid-cols-1 md:grid-cols-3 gap-2"}>
                             <div
