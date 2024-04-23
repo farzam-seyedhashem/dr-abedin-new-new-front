@@ -16,17 +16,13 @@ export default function Home(props) {
         {name: "تماس با ما", href: "/contact-us", current: true},
     ]
     const drFeatures = [
-        "جراحي زيبايي بيني و سپتوم (سپتورينوپلاستي)",
-        "اصلاح دفرمیتی گوش (اتوپلاستي)",
-        "پروتز چانه (منتوپلاستي)",
-        "جراحي پلك (بلفاروپلاستي)",
-        "اصلاح انحراف بيني و بازسازي راه هوايي (سپتوپلاستي)",
-        "جراحي آندوسكوپيك بيني و سينوس (FESS)",
-        "جراحي لوزه در اطفال و بزرگسالان",
-        "جراحی جا اندازي شكستگي بيني",
-        "مشاوره قبل از عمل همگي اعمال جراحي توسط دكتر عابدين.",
-        "انجام همه مراقبت هاي پس از جراحي از قبيل تعويض چسب بيني، كشيدن بخيه ها و … توسط ايشان.",
-        "انجام تمامي معاينات گوش و حلق و بيني از قبيل معاينه و ساكشن گوش با استفاده از ميكروسكوپ، آندوسكوپي تشخيصي بيني و حنجره و بررسي و تشخيص انواع مشكلات شايع از قبيل مشكلات تنفسي و انسداد بيني، آپنه و خروپف خواب شبانه، كاهش شنوايي، سرگيجه، آلرژي فصلي، سينوزيت و دردهاي صورت، بيماري هاي تيروئيد و غدد بزاقي، بررسي علل گرفتگي صدا و مشكلات تكلم و ساير بيماري هاي مربوط به تخصص جراحي گوش، حلق، بيني و جراحي سر و گردن."
+        "جراحي اصلاح فرم بینی ، رفع انحراف بینی و بازسازی راه هوایی ( سپتورینوپلاستی )",
+        "جراحی اصلاح دفرمیتی گوش ( اتوپلاستی )",
+        "جراحی پلاک فوقانی ( بلفاروپلاستی )",
+        "جراحی اندوسکوپیک بینی و سینوس ( FESS )",
+        "جراحی لوزه در اطفال بزرگسالان",
+        "جااندازی شکستگی بینی",
+
     ]
     return (
         <MainLayout {...other}>
@@ -42,7 +38,7 @@ export default function Home(props) {
                                 خدمات دکتر بهزاد عابدین
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"فهرست خدمات و جراحی های انجام شده توسط دکتر بهزاد عابدین، جراح و متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران"}
+                                {"فهرست خدمات و جراحی های انجام شده توسط دکتر بهزاد عابدین، متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران"}
                             </p>
                         </div>
                     </div>
@@ -52,75 +48,75 @@ export default function Home(props) {
                     </div>
                 </div>
                 <div className={"mt-16 container mx-auto"}>
-                    <p className={"leading-6 text-on-surface-variant-light dark:text-on-surface-variant-dark  "}>
-                        <strong className={"font-medium"}>
-                            محتوا
-                        </strong>
-                    </p>
-                    <ul className={"mt-4 space-y-[0.5]"}>
-                        <li>
-                            <Link locale={false} href={"/services#h1"}>
-                                <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"اعمال جراحي بینی و صورت"}
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link locale={false} href={"/services#h2"}>
-                                <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light  dark:text-primary-dark font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"اعمال جراحی درمانی"}
-                                </div>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link locale={false} href={"/services#h3"}>
-                                <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"خدمات ارائه شده در مطب"}
-                                </div>
-                            </Link>
-                        </li>
-                        {/*<li>*/}
-                        {/*    <Link locale={false} href={"/about-us#h3"}>*/}
-                        {/*        <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>*/}
-                        {/*            {"نوبت دهی آنلاین"}*/}
-                        {/*        </div>*/}
-                        {/*    </Link>*/}
-                        {/*</li>*/}
+                    {/*<p className={"leading-6 text-on-surface-variant-light dark:text-on-surface-variant-dark  "}>*/}
+                    {/*    <strong className={"font-medium"}>*/}
+                    {/*        محتوا*/}
+                    {/*    </strong>*/}
+                    {/*</p>*/}
+                    {/*<ul className={"mt-4 space-y-[0.5]"}>*/}
+                    {/*    <li>*/}
+                    {/*        <Link locale={false} href={"/services#h1"}>*/}
+                    {/*            <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>*/}
+                    {/*                {"اعمال جراحي بینی و صورت"}*/}
+                    {/*            </div>*/}
+                    {/*        </Link>*/}
+                    {/*    </li>*/}
+                    {/*    <li>*/}
+                    {/*        <Link locale={false} href={"/services#h2"}>*/}
+                    {/*            <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light  dark:text-primary-dark font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>*/}
+                    {/*                {"اعمال جراحی درمانی"}*/}
+                    {/*            </div>*/}
+                    {/*        </Link>*/}
+                    {/*    </li>*/}
+                    {/*    <li>*/}
+                    {/*        <Link locale={false} href={"/services#h3"}>*/}
+                    {/*            <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>*/}
+                    {/*                {"خدمات ارائه شده در مطب"}*/}
+                    {/*            </div>*/}
+                    {/*        </Link>*/}
+                    {/*    </li>*/}
+                    {/*    /!*<li>*!/*/}
+                    {/*    /!*    <Link locale={false} href={"/about-us#h3"}>*!/*/}
+                    {/*    /!*        <div className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>*!/*/}
+                    {/*    /!*            {"نوبت دهی آنلاین"}*!/*/}
+                    {/*    /!*        </div>*!/*/}
+                    {/*    /!*    </Link>*!/*/}
+                    {/*    /!*</li>*!/*/}
 
-                    </ul>
+                    {/*</ul>*/}
                     <h2 id={"h1"}
                         className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"اعمال جراحي بینی و صورت"}
+                        {"اعمال جراحي انجام شده توسط دکتر بهزاد عابدین"}
                     </h2>
                     <ul className={"list-star-rtl mr-[22px]"}>
-                        {drFeatures.map((item,i) => i<=3 && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
+                        {drFeatures.map((item,i) =>  <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
                             <h6>
                                 {item}
                             </h6>
                         </li>)}
                     </ul>
-                    <h2 id={"h2"}
-                        className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"اعمال جراحی درمانی"}
-                    </h2>
-                    <ul className={"list-star-rtl mr-[22px]"}>
-                        {drFeatures.map((item,i) =>  (i>3 && i<=7) && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
-                            <h6>
-                                {item}
-                            </h6>
-                        </li>)}
-                    </ul>
-                    <h2 id={"h3"}
-                        className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"خدمات ارائه شده در مطب"}
-                    </h2>
-                    <ul className={"list-star-rtl mr-[22px]"}>
-                        {drFeatures.map((item,i) => i>7 && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
-                            <h6>
-                                {item}
-                            </h6>
-                        </li>)}
-                    </ul>
+                    {/*<h2 id={"h2"}*/}
+                    {/*    className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">*/}
+                    {/*    {"اعمال جراحی درمانی"}*/}
+                    {/*</h2>*/}
+                    {/*<ul className={"list-star-rtl mr-[22px]"}>*/}
+                    {/*    {drFeatures.map((item,i) =>  (i>3 && i<=7) && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>*/}
+                    {/*        <h6>*/}
+                    {/*            {item}*/}
+                    {/*        </h6>*/}
+                    {/*    </li>)}*/}
+                    {/*</ul>*/}
+                    {/*<h2 id={"h3"}*/}
+                    {/*    className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">*/}
+                    {/*    {"خدمات ارائه شده در مطب"}*/}
+                    {/*</h2>*/}
+                    {/*<ul className={"list-star-rtl mr-[22px]"}>*/}
+                    {/*    {drFeatures.map((item,i) => i>7 && <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>*/}
+                    {/*        <h6>*/}
+                    {/*            {item}*/}
+                    {/*        </h6>*/}
+                    {/*    </li>)}*/}
+                    {/*</ul>*/}
                 </div>
                 <div className={"container mx-auto"}>
                     <div
