@@ -4,24 +4,30 @@ import Image from 'next/legacy/image'
 import Link from "next/link";
 import {ContentConvertor} from "@/_helper/ContentConvertor";
 import Button from "@/components/buttons/Button";
-import {API, ImageBaseURL} from '@/config'
+import {API} from '@/config'
 import Icon from "@/components/assets/Icon";
 
-export async function getStaticProps() {
-    const getPost = await fetch(`${API}/posts`)
-    const getCategory = await fetch(`${API}/category`)
-    const posts = await getPost.json()
-    const categories = await getCategory.json()
+export async function getServerSideProps(context) {
+    const getBlogCategories = await fetch(API + `/category?per_page=1000`);
+    const categories = await getBlogCategories.json();
+
+    const getCategory = await fetch(API + `/category/${context.params.slug}`);
+    const cat = await getCategory.json();
+
+    const getBlogs = await fetch(API + `/posts?per_page=12&page=1&category=${cat._id}`);
+    const posts = await getBlogs.json();
     return {
         props: {
-            categories,
             posts,
+            cat,
+            categories,
         },
     }
 }
 
+
 export default function Home(props) {
-    const {posts, categories, ...other} = props
+    const {posts, categories, cat, ...other} = props
     const breadCrumbs = [
         {name: "مقالات", href: "/blog", current: true},
     ]
@@ -55,7 +61,7 @@ export default function Home(props) {
                         <ul className={" space-x-reverse space-x-2 mb-8 flex items-center"}>
                             <li>
                                 <Link
-                                    className={"bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark flex items-center pr-2 pl-4  h-[32px] rounded-[8px] text-label-large"}
+                                    className={`${false ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : " border-outline-variant-light dark:border-outline-variant-dark border text-on-surface-variant-light dark:text-on-surface-variant-dark"} flex items-center pr-2 pl-4  h-[32px] rounded-[8px] text-label-large`}
                                     href={`/blog`}>
                                     <Icon size={24} type={"outline"} className={"!text-[20px] font-normal ml-2"}>
                                         check
@@ -65,11 +71,15 @@ export default function Home(props) {
                             </li>
                             {categories.map((category, index) => <li key={index}>
                                 <Link
-                                    className={"text-on-surface-variant-light dark:text-on-surface-variant-dark flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}
+                                    className={`${category.slug === cat.slug ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : " border-outline-variant-light dark:border-outline-variant-dark border text-on-surface-variant-light dark:text-on-surface-variant-dark"} px-4 flex items-center h-[32px] rounded-[8px] text-label-large`}
                                     href={`/blog/${category.slug}`}>
-                                    <div className={"h-[20px]"}>
-                                        check
-                                    </div>
+                                    {category.slug === cat.slug ?
+                                        <Icon size={24} type={"outline"} className={"!text-[20px] font-normal ml-2"}>
+                                            check
+                                        </Icon> :
+                                        <div className={"h-[20px]"}>
+                                            check
+                                        </div>}
                                     {category.title}
                                 </Link>
                             </li>)}
@@ -85,7 +95,7 @@ export default function Home(props) {
                                 <Link href={`/${post.slug}`}>
                                     <Image className={"rounded-[24px]"} width={1920} height={1280} objectFit={"cover"}
                                            layout={"responsive"} alt={post.title}
-                                           src={`${ImageBaseURL}${post.thumbnail.url}`}/>
+                                           src={`http://localhost:3000/data/${post.thumbnail.url}`}/>
                                 </Link>
                                 <div className={"pt-6 pb-6 px-6"}>
                                     <Link href={`/blog/${post.category.slug}`}>
