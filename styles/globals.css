@@ -1110,6 +1110,10 @@ body {
     /*    font-stretch: 25% 151%;*/
     /*    font-display: swap;*/
     /*}*/
+    .list-blog{
+        /*list-style: circle !important;*/
+        list-style-type: circle !important;
+    }
     .list-star li:before {
         display: inline-block;
         position: absolute;

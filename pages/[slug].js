@@ -8,7 +8,7 @@ import Image from "next/image"
 import {convertContentType} from "@/_helper/Convertor";
 
 export async function getStaticProps(context) {
-    const getPost = await fetch(API + '/posts/' + context.params.slug, {
+    const getPost = await fetch(API + '/blog/' + context.params.slug, {
         method: "GET",
         headers: {
             // update with your user-agent
@@ -52,7 +52,7 @@ export async function getStaticProps(context) {
 }
 
 const getPosts = async (page, per_page) => {
-    const getPost = await fetch(API + '/posts?per_page=' + per_page + '&page=' + page, {
+    const getPost = await fetch(API + '/blog?per_page=' + per_page + '&page=' + page, {
         method: "GET",
         headers: {
             // update with your user-agent
@@ -108,8 +108,8 @@ export default function Home(props) {
                         دسته بندی :
                         <Link
                             className={"rtl:mr-2 ltr:ml-2 text-primary-light dark:text-primary-dark hover:underline dark:hover:text-on-primary-container-dark hover:text-on-primary-container-light"}
-                            href={'/blog/' + data.category.slug}>
-                            {data.category.title}
+                            href={'/blog/' + data.categories.slug}>
+                            {data.categories.title}
                         </Link>
                     </div>
                     <div
@@ -130,11 +130,12 @@ export default function Home(props) {
                         </div>
                     </div>
                     <div className={"max-w-4xl mt-4"}>
-                        <Image width={1920} height={1080} alt={""} className={"rounded-[24px]"} layout={"responsive"}
+                        <Image width={1920} quality={100} height={1080} alt={""} className={"rounded-[24px]"} layout={"responsive"}
                                objectFit={"cover"} src={ImageBaseURL + data.thumbnail.url}/>
                     </div>
                     <div className={"mt-6"}>
                     {JSON.parse(data?.content).blocks.map((item, i) => {
+
                         return convertContentType(item)
                     })}
                     </div>

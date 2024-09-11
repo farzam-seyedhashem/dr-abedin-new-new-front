@@ -6,10 +6,11 @@ import {ContentConvertor} from "@/_helper/ContentConvertor";
 import Button from "@/components/buttons/Button";
 import {API, ImageBaseURL} from '@/config'
 import Icon from "@/components/assets/Icon";
+import TruncText from "@/_helper/TruncText";
 
 export async function getStaticProps() {
-    const getPost = await fetch(`${API}/posts`)
-    const getCategory = await fetch(`${API}/category`)
+    const getPost = await fetch(`${API}/blog`)
+    const getCategory = await fetch(`${API}/blog-category`)
     const posts = await getPost.json()
     const categories = await getCategory.json()
     return {
@@ -63,12 +64,12 @@ export default function Home(props) {
                                     همه دسته بندی ها
                                 </Link>
                             </li>
-                            {categories.map((category, index) => <li key={index}>
+                            {categories.data.map((category, index) => <li key={index}>
                                 <Link
                                     className={"text-on-surface-variant-light dark:text-on-surface-variant-dark flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}
                                     href={`/blog/${category.slug}`}>
                                     <div className={"h-[20px]"}>
-                                        check
+
                                     </div>
                                     {category.title}
                                 </Link>
@@ -88,9 +89,9 @@ export default function Home(props) {
                                            src={`${ImageBaseURL}${post.thumbnail.url}`}/>
                                 </Link>
                                 <div className={"pt-6 pb-6 px-6"}>
-                                    <Link href={`/blog/${post.category.slug}`}>
+                                    <Link href={`/blog/${post.categories.slug}`}>
                                         <h3 className={"text-primary-light dark:text-primary-dark text-label-large mb-1"}>
-                                            {post.category.title}
+                                            {post.categories.title}
                                         </h3>
                                     </Link>
                                     <Link href={`/${post.slug}`}>
@@ -100,7 +101,9 @@ export default function Home(props) {
                                     </Link>
 
                                     <p className={"text-on-surface-variant-light dark:text-on-surface-variant-dark mt-2"}>
+                                        <TruncText >
                                         {ContentConvertor(post.content)}
+                                        </TruncText>
                                     </p>
                                 </div>
 
