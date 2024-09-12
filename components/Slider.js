@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Image from 'next/image'
-import {useTranslation} from "next-i18next";
+// import {useTranslation} from "next-i18next";
 import slide1 from '../public/slider/s-1.jpg'
 import slide2 from '../public/slider/s-2.jpeg'
 
@@ -8,7 +8,7 @@ import {useRouter} from "next/router";
 
 
 export default function Example() {
-    const {t} = useTranslation("index")
+    // const {t} = useTranslation("index")
     const router = useRouter()
 
     const slides = {

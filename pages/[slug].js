@@ -8,21 +8,28 @@ import Image from "next/image"
 import {convertContentType} from "@/_helper/Convertor";
 
 export async function getStaticProps(context) {
+    console.log(context.params.slug)
     const getPost = await fetch(API + '/blog/' + context.params.slug, {
         method: "GET",
         headers: {
+            "Content-Type": "application/json"
             // update with your user-agent
-            "User-Agent": "*",
-            Accept: "application/json; charset=UTF-8",
+            // "User-Agent": "*",
+            // Accept: "application/json; charset=UTF-8",
         },
     });
 
     let post;
-    if (getPost.status !== 404) {
-        post = await getPost.json();
+
+    // console.log("postttt",getPost.status,await getPost.json(),context.params.slug);
+    if (getPost.status === 404) return {
+        notFound: true,
     }
 
-    let type;
+    post = await getPost.json();
+
+
+    let type = "post";
     let data;
     // const errorCode = getPost.ok ? false : getPost.statusCode
     if (post === null) return {
@@ -31,6 +38,14 @@ export async function getStaticProps(context) {
     data = post
     type = "post"
     if (!post) {
+        return {
+            redirect: {
+                destination: '/',
+                statusCode: 301
+            },
+        }
+    }
+    if (typeof post === "undefined") {
         return {
             redirect: {
                 destination: '/',
@@ -55,9 +70,10 @@ const getPosts = async (page, per_page) => {
     const getPost = await fetch(API + '/blog?per_page=' + per_page + '&page=' + page, {
         method: "GET",
         headers: {
+            "Content-Type": "application/json"
             // update with your user-agent
-            "User-Agent": "*",
-            Accept: "application/json; charset=UTF-8",
+            // "User-Agent": "*",
+            // Accept: "application/json",
         },
     });
     return await getPost.json()
@@ -79,7 +95,7 @@ export async function getStaticPaths() {
             allPosts.currentPage = i
         }
     }
-
+    console.log(allPosts)
     const postPaths = allPosts.data.map((post) => ({
         params: {slug: post.slug},
     }))
@@ -87,22 +103,23 @@ export async function getStaticPaths() {
     // console.log(productPaths)
     // Get the paths we want to pre-render based on posts
     const paths = [...postPaths]
-
+    console.log(paths)
     // We'll pre-render only these paths at build time.
     // { fallback: blocking } will server-render pages
     // on-demand if the path doesn't exist.
-    return {paths, fallback: true}
+    return {paths, fallback: 'blocking'}
 }
 
 
 export default function Home(props) {
     const {data, type, ...other} = props
+    console.log(data)
     return (
         <MainLayout  {...other}>
             <div className={"py-6"}>
                 <div className={"container mx-auto"}>
                     <h1 className={"text-headline-large font-black text-on-surface-light dark:text-on-surface-dark "}>
-                        {data.title}
+                        {data?.title}
                     </h1>
                     <div className={"mt-2 text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
                         دسته بندی :
@@ -119,25 +136,26 @@ export default function Home(props) {
                                 update
                             </Icon>
 
-                            <ConvertDate date={data.updatedAt}/>
+                            <ConvertDate date={data?.updatedAt}/>
                         </div>
                         <div className={"flex items-center"}>
                             <Icon type={"outline"}>
                                 calendar_month
                             </Icon>
 
-                            <ConvertDate date={data.createdAt}/>
+                            <ConvertDate date={data?.createdAt}/>
                         </div>
                     </div>
                     <div className={"max-w-4xl mt-4"}>
-                        <Image width={1920} quality={100} height={1080} alt={""} className={"rounded-[24px]"} layout={"responsive"}
-                               objectFit={"cover"} src={ImageBaseURL + data.thumbnail.url}/>
+                        <Image width={1920} quality={100} height={1080} alt={""} className={"rounded-[24px]"}
+                               layout={"responsive"}
+                               objectFit={"cover"} src={ImageBaseURL + data?.thumbnail.url}/>
                     </div>
                     <div className={"mt-6"}>
-                    {JSON.parse(data?.content).blocks.map((item, i) => {
+                        {JSON.parse(data?.content).blocks.map((item, i) => {
 
-                        return convertContentType(item)
-                    })}
+                            return convertContentType(item)
+                        })}
                     </div>
                 </div>
             </div>

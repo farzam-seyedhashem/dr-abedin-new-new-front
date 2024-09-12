@@ -1,12 +1,12 @@
 /* This example requires Tailwind CSS v2.0+ */
 import Image from 'next/image'
 import Link from 'next/link'
-import {useTranslation} from "next-i18next";
+// import {useTranslation} from "next-i18next";
 import React from "react";
 
 
 export default function Footer() {
-    const {t} = useTranslation('common')
+    // const {t} = useTranslation('common')
     const navigation = {
         pages: [
             {name: "خانه", href: '/'},

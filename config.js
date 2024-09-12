@@ -1,8 +1,10 @@
 module.exports = {
     // API:'http://45.79.154.223:3000/api',
     InterAPI:"http://localhost:3000/api",
-    ImageBaseURL:'https://api.dr-abedin.com',
-    API:'https://api.dr-abedin.com',
+    // ImageBaseURL:'https://api.dr-abedin.com',
+    // API:'https://api.dr-abedin.com',
+    ImageBaseURL:'http://localhost:3000',
+    API:'http://localhost:3000',
     // InterAPI:"https://new.bumbleauto.com",
     // ImageBaseURL:'https://api.bumbleauto.com'
 }

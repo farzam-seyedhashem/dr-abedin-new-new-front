@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {useTranslation} from "next-i18next"
 import Image from "next/image";
 import {useRouter} from "next/router";
 import VideoThumb from '../public/video-thumb.jpg'
@@ -8,63 +7,6 @@ import Link from "next/link";
 import GalleryDialog from "@/components/GalleryDialog";
 import  Icon from '@/components/assets/Icon'
 export default function About(props) {
-    const {t} = useTranslation("index");
-    const features = [
-        {
-            name: t("The best quality in the world"),
-            description: t("The best quality in the world description"),
-            icon: ({className}) => {
-                return <svg className={className} xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24"
-                            height="24px"
-                            viewBox="0 0 24 24" width="24px" fill="currentColor">
-                    <g>
-                        <rect fill="none" height="24" width="24"/>
-                    </g>
-                    <g>
-                        <g>
-                            <path
-                                d="M23,11.99l-2.44-2.79l0.34-3.69l-3.61-0.82L15.4,1.5L12,2.96L8.6,1.5L6.71,4.69L3.1,5.5L3.44,9.2L1,11.99l2.44,2.79 l-0.34,3.7l3.61,0.82L8.6,22.5l3.4-1.47l3.4,1.46l1.89-3.19l3.61-0.82l-0.34-3.69L23,11.99z M19.05,13.47l-0.56,0.65l0.08,0.85 l0.18,1.95l-1.9,0.43l-0.84,0.19l-0.44,0.74l-0.99,1.68l-1.78-0.77L12,18.85l-0.79,0.34l-1.78,0.77l-0.99-1.67l-0.44-0.74 l-0.84-0.19l-1.9-0.43l0.18-1.96l0.08-0.85l-0.56-0.65l-1.29-1.47l1.29-1.48l0.56-0.65L5.43,9.01L5.25,7.07l1.9-0.43l0.84-0.19 l0.44-0.74l0.99-1.68l1.78,0.77L12,5.14l0.79-0.34l1.78-0.77l0.99,1.68l0.44,0.74l0.84,0.19l1.9,0.43l-0.18,1.95l-0.08,0.85 l0.56,0.65l1.29,1.47L19.05,13.47z"/>
-                            <polygon points="10.09,13.75 7.77,11.42 6.29,12.91 10.09,16.72 17.43,9.36 15.95,7.87"/>
-                        </g>
-                    </g>
-                </svg>
-            },
-        },
-        {
-            name: t("The fastest providing of production"),
-            description: t("The fastest providing of production description"),
-            icon: ({className}) => {
-                return <svg className={className} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
-                            width="24px"
-                            fill="currentColor">
-                    <path d="M0 0h24v24H0V0z" fill="none"/>
-                    <path d="M9.01 14H2v2h7.01v3L13 15l-3.99-4v3zm5.98-1v-3H22V8h-7.01V5L11 9l3.99 4z"/>
-                </svg>
-            },
-        },
-        {
-            name: t("Direct providing"),
-            description: t("Direct providing description"),
-            icon: ({className}) => {
-                return <svg className={className} xmlns="http://www.w3.org/2000/svg" enableBackground="new 0 0 24 24"
-                            height="24px"
-                            viewBox="0 0 24 24" width="24px" fill="currentColor">
-                    <g>
-                        <rect fill="none" height="24" width="24"/>
-                        <path
-                            d="M9.78,11.16l-1.42,1.42c-0.68-0.69-1.34-1.58-1.79-2.94l1.94-0.49C8.83,10.04,9.28,10.65,9.78,11.16z M11,6L7,2L3,6h3.02 C6.04,6.81,6.1,7.54,6.21,8.17l1.94-0.49C8.08,7.2,8.03,6.63,8.02,6H11z M21,6l-4-4l-4,4h2.99c-0.1,3.68-1.28,4.75-2.54,5.88 c-0.5,0.44-1.01,0.92-1.45,1.55c-0.34-0.49-0.73-0.88-1.13-1.24L9.46,13.6C10.39,14.45,11,15.14,11,17c0,0,0,0,0,0h0v5h2v-5 c0,0,0,0,0,0c0-2.02,0.71-2.66,1.79-3.63c1.38-1.24,3.08-2.78,3.2-7.37H21z"/>
-                    </g>
-                </svg>
-            },
-        },
-    ];
-    const Links = [
-        {title: t("Services"), link: "/services"},
-        {title: t("Reserve"), link: "/services"},
-        {title: t("Blogs"), link: "/products"},
-        {title: t("Learn More About Dr Abedin"), link: "/about-us"},
-        {title: t("Ways of communication"), link: "/contact-us"},
-    ]
     const [openVideo, setOpenVideo] = useState(false)
     const router = useRouter()
     const [isGalleryOpen,setIsGalleryOpen] = useState(false)
