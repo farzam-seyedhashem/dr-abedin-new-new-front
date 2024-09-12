@@ -3,7 +3,7 @@
 
 const nextConfig = {
   // i18n,
-  reactStrictMode: true,
+  reactStrictMode: false,
   images: {
     minimumCacheTTL: 31536000,
     domains: ["localhost","api.dr-abedin.com"],
