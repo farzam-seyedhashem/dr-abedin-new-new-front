@@ -50,12 +50,12 @@ export default function Home(props) {
                 </div>
                 <Space size={"normal"}/>
                 <div className={"container mx-auto"}>
-                    <div className={""}>
+                    <div className={"overflow-hidden"}>
 
-                        <ul className={" space-x-reverse space-x-2 mb-8 flex items-center"}>
+                        <ul className={"overflow-scroll w-full whitespace-nowrap space-x-reverse space-x-2 mb-8  flex items-center"}>
                             <li>
                                 <Link
-                                    className={"bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark flex items-center pr-2 pl-4  h-[32px] rounded-[8px] text-label-large"}
+                                    className={"bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark inline-flex md:flex items-center pr-2 pl-4  h-[32px] rounded-[8px] text-label-large"}
                                     href={`/blog`}>
                                     <Icon size={24} type={"outline"} className={"!text-[20px] font-normal ml-2"}>
                                         check
@@ -65,7 +65,7 @@ export default function Home(props) {
                             </li>
                             {categories.data.map((category, index) => <li key={index}>
                                 <Link
-                                    className={"text-on-surface-variant-light dark:text-on-surface-variant-dark flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}
+                                    className={"text-on-surface-variant-light dark:text-on-surface-variant-dark inline-flex md:flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}
                                     href={`/blog/${category.slug}`}>
                                     <div className={"h-[20px]"}>
 
@@ -76,7 +76,7 @@ export default function Home(props) {
                         </ul>
 
                     </div>
-                    <div className={"grid grid-cols-4 gap-4"}>
+                    <div className={"grid grid-cols-1 md:grid-cols-4 gap-4"}>
 
                         {posts.data.map((post, index) => (
                             <div
