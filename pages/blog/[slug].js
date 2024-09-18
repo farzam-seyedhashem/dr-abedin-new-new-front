@@ -57,9 +57,9 @@ export default function Home(props) {
                 </div>
                 <Space size={"normal"}/>
                 <div className={"container mx-auto"}>
-                    <div className={""}>
+                    <div className={"overflow-hidden"}>
 
-                        <ul className={" space-x-reverse space-x-2 mb-8 flex items-center"}>
+                        <ul className={"overflow-scroll w-full whitespace-nowrap space-x-reverse space-x-2 mb-8  flex items-center"}>
                             <li>
                                 <Link
                                     className={`${false ? "bg-secondary-container-light dark:bg-secondary-container-dark text-on-secondary-container-light dark:text-on-secondary-container-dark" : " border-outline-variant-light dark:border-outline-variant-dark border text-on-surface-variant-light dark:text-on-surface-variant-dark"} flex items-center pr-2 pl-4  h-[32px] rounded-[8px] text-label-large`}
@@ -87,8 +87,8 @@ export default function Home(props) {
                         </ul>
 
                     </div>
-                    <div className={"grid grid-cols-4 gap-4"}>
-
+                    <div className={"grid grid-cols-1 md:grid-cols-4 gap-4"}>
+                       
                         {posts.data.map((post, index) => (
                             <div
                                 className={"rounded-[24px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}
