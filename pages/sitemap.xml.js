@@ -15,14 +15,9 @@ export const getServerSideProps = async ({req,res}) => {
                     <loc>https://${url}/pages-sitemap.xml</loc>
                 </sitemap>
                 <sitemap>
-                    <loc>https://${url}/products-sitemap.xml</loc>
-                </sitemap>
-                <sitemap>
                     <loc>https://${url}/post-category-sitemap.xml</loc>
                 </sitemap>
-                 <sitemap>
-                    <loc>https://${url}/product-category-sitemap.xml</loc>
-                </sitemap>
+               
      </sitemapindex>
   `;
 
