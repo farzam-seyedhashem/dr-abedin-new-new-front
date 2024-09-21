@@ -5,22 +5,23 @@ export const getServerSideProps = async ({req,res}) => {
     // const allPost = await allPosts()
     // const allCategory = await allCategories()
 // const router = useRouter()
+    const url = "dr-abedin.com"
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <sitemapindex xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
     <sitemap>
-    <loc>https://${req.headers.host}/post-sitemap.xml</loc>
+    <loc>https://${url}/post-sitemap.xml</loc>
     </sitemap>
     <sitemap>
-                    <loc>https://${req.headers.host}/pages-sitemap.xml</loc>
+                    <loc>https://${url}/pages-sitemap.xml</loc>
                 </sitemap>
                 <sitemap>
-                    <loc>https://${req.headers.host}/products-sitemap.xml</loc>
+                    <loc>https://${url}/products-sitemap.xml</loc>
                 </sitemap>
                 <sitemap>
-                    <loc>https://${req.headers.host}/post-category-sitemap.xml</loc>
+                    <loc>https://${url}/post-category-sitemap.xml</loc>
                 </sitemap>
                  <sitemap>
-                    <loc>https://${req.headers.host}/product-category-sitemap.xml</loc>
+                    <loc>https://${url}/product-category-sitemap.xml</loc>
                 </sitemap>
      </sitemapindex>
   `;
