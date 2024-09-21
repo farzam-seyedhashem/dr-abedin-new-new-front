@@ -1,5 +1,5 @@
 import React from "react";
-import {API} from "../config";
+import {API} from "@/config";
 // const globby = require('globby')
 // import {globby} from 'globby'
 function addPage(route, lastMod, changeFreq, priority) {
@@ -25,7 +25,7 @@ export const getServerSideProps = async ({res, locale}) => {
     });
     const posts = await getPost.json()
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="https://www.w3.org/1999/xhtml">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
            ${addPage('', new Date().toISOString(), 'always', '1.0')}
      ${addPage('/blog', posts?.data[0]?.updatedAt, 'weekly', '0.9')}
      ${addPage('/contact-us', "2024-09-21T11:43:28.235Z", 'never', '0.5')}

@@ -60,7 +60,7 @@ export const getServerSideProps = async ({res, locale}) => {
     const allProducts = await getAllProducts(locale)
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
      
     ${allProducts.map(item =>
         addPage('/blog/' + item.slug, item.updatedAt, 'weekly', "0.9")
