@@ -35,12 +35,12 @@ export default function MainLayout({
         }
     }
 
-    const [isGalleryOpen,setIsGalleryOpen] = useState(false)
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false)
     return (
 
         <>
             <Head>
-                <meta name="msapplication-navbutton-color" content="#000000"/>
+                <meta name="msapplication-navbutton-color" content="#ffffff"/>
                 <meta name="apple-mobile-web-app-capable" content="yes"/>
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
                 <meta charSet="utf-8"/>
@@ -152,119 +152,43 @@ export default function MainLayout({
                 {/*`,*/}
                 {/*          }}*/}
                 {/*      />*/}
-                <script type={"application/ld+json"} dangerouslySetInnerHTML={{
-                    __html: `
-                {
-        "@context": "https:\\/\\/schema.org",
-        "@graph": [
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Home",
-            "url": "https:\\/\\/bumbleauto.com\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Pages",
-            "url": "#"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Car Services",
-            "url": "https:\\/\\/bumbleauto.com\\/services\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Car Repair Services",
-            "url": "https:\\/\\/bumbleauto.com\\/services\\/repair-car\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Sell Your Car",
-            "url": "https:\\/\\/bumbleauto.com\\/services\\/sell-your-car\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Get Pre-Qualified",
-            "url": "https:\\/\\/bumbleauto.com\\/get-pre-qualified\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Used Car financing to Support You",
-            "url": "https:\\/\\/bumbleauto.com\\/financing\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Car Trade-in",
-            "url": "https:\\/\\/bumbleauto.com\\/services\\/car-trade-in\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "About Us",
-            "url": "https:\\/\\/bumbleauto.com\\/about-us\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Warranty",
-            "url": "https:\\/\\/bumbleauto.com\\/warranty\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Locations",
-            "url": "https:\\/\\/bumbleauto.com\\/locations\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Contact Us",
-            "url": "https:\\/\\/bumbleauto.com\\/contact-us\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Car Wishlist",
-            "url": "https:\\/\\/bumbleauto.com\\/car-wishlist\\/"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Contact Us",
-            "url": "#"
-        },
-        {
-            "@context": "https:\\/\\/schema.org",
-            "@type": "SiteNavigationElement",
-            "@id": "https:\\/\\/bumbleauto.com\\/#Main Menu",
-            "name": "Shortcodes",
-            "url": "#"
-        }
-        ]
-    },
-                `
+                <script defer id={"MainLD"} key={`JSON-LD`} type='application/ld+json' dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "PlasticSurgery",
+                        "name": "دکتر بهزاد عابدین",
+                        "image": "https://dr-abedin.com/logo.svg",
+                        "@id": "https://dr-abedin.com",
+                        "url": "https://dr-abedin.com",
+                        "telephone": "+982126601967",
+                        "priceRange": "$$$",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "منطقه ۱، خیابان جردن، تهران، ایران",
+                            "addressLocality": "تهران",
+                            "postalCode": "تهران",
+                            "addressCountry": "IR"
+                        },
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": 35.78666374650412,
+                            "longitude": 51.43571546845197
+                        },
+                        "openingHoursSpecification": {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Saturday",
+                                "Sunday"
+                            ],
+                            "opens": "14:00",
+                            "closes": "19:00"
+                        },
+                        "sameAs": "https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fdr.behzadabedin%2F%3Fnext%3D%252F&is_from_rle"
+                    })
                 }}>
 
                 </script>
@@ -303,11 +227,17 @@ export default function MainLayout({
 
 
                 <div className={"md:flex bg-surface-container-light dark:bg-surface-container-dark"}>
-                    <Appbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
+                    <Appbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}
+                            handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode}
+                            modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer}
+                            setOpenDrawer={setOpenDrawer}/>
                     <GalleryDialog openDialog={isGalleryOpen} setOpenDialog={setIsGalleryOpen}/>
                     {/*<NavigationBar/>*/}
                     <div className={"bg-surface-light dark:bg-surface-dark md:mr-auto w-full md:mt-[64px]"}>
-                        <MobileAppbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}  handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode} modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer}/>
+                        <MobileAppbar setIsGalleryOpen={setIsGalleryOpen} colorMode={colorMode}
+                                      handleChangeColor={handleChangeColor} handleChangeMode={handleChangeMode}
+                                      modeType={modeType} withoutFAB={withoutFAB} openDrawer={openDrawer}
+                                      setOpenDrawer={setOpenDrawer}/>
                         {/*<TopAppbar modeType={modeType}*/}
                         {/*           handleChangeMode={handleChangeMode}*/}
                         {/*           handleChangeColor={handleChangeColor}*/}

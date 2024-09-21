@@ -6,6 +6,9 @@ import ConvertDate from "@/_helper/ConvertDate";
 import Link from "next/link";
 import Image from "next/image"
 import {convertContentType} from "@/_helper/Convertor";
+import Script from "next/script";
+import {ContentConvertor} from "@/_helper/ContentConvertor";
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export async function getStaticProps(context) {
     console.log(context.params.slug)
@@ -114,38 +117,93 @@ export async function getStaticPaths() {
 export default function Home(props) {
     const {data, type, ...other} = props
     console.log(data)
+    const breadCrumbs = [
+        {name: "مقالات", href: "/blog", current: false},
+        {name: data.categories.title, href: "/blog/"+data.categories.slug, current: false},
+        {name: data.title, href: "/"+data.slug, current: true},
+    ]
+    const siteSetting = {
+        metaTitle: `${data.metaTitle}`,
+        metaDescription: `${data.metaDescription}`,
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
     return (
-        <MainLayout  {...other}>
-            <div className={"py-6"}>
+        <MainLayout siteSetting={siteSetting}  {...other}>
+            <Script id={"article-ld"} key={`JSON-LD`} type='application/ld+json' dangerouslySetInnerHTML={{
+                __html: JSON.stringify(
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "Article",
+                        "headline": data?.title,
+                        "image": ImageBaseURL + data?.thumbnail?.url,
+                        "description": ContentConvertor(data.content).substring(0, 109),
+                        "mainEntityOfPage": {
+                            "@type": "WebPage",
+                            "@id": `https://dr-abedin.com/${data.slug}`
+                        },
+                        "author": {
+                            "@type": "Organization",
+                            "name": "دکتر بهزاد عابدین",
+                            "url": "https://dr-abedin.com"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "دکتر بهزاد عابدین",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://dr-abedin.com/logo.svg"
+                            }
+                        },
+                        "datePublished": data.createdAt,
+                        "dateModified": data.updatedAt
+                    }
+                )
+            }}>
+
+            </Script>
+
+            <article className={"py-6"}>
                 <div className={"container mx-auto"}>
-                    <h1 className={"text-headline-large font-black text-on-surface-light dark:text-on-surface-dark "}>
-                        {data?.title}
-                    </h1>
-                    <div className={"mt-2 text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
-                        دسته بندی :
-                        <Link
-                            className={"rtl:mr-2 ltr:ml-2 text-primary-light dark:text-primary-dark hover:underline dark:hover:text-on-primary-container-dark hover:text-on-primary-container-light"}
-                            href={'/blog/' + data.categories.slug}>
-                            {data.categories.title}
-                        </Link>
-                    </div>
-                    <div
-                        className={"mt-2 flex text-on-surface-variant-light dark:text-on-surface-variant-dark items-center space-x-reverse space-x-6"}>
-                        <div className={"flex items-center"}>
-                            <Icon type={"outline"}>
-                                update
-                            </Icon>
+                    <header>
 
-                            <ConvertDate date={data?.updatedAt}/>
-                        </div>
-                        <div className={"flex items-center"}>
-                            <Icon type={"outline"}>
-                                calendar_month
-                            </Icon>
 
-                            <ConvertDate date={data?.createdAt}/>
+
+                        <h1 className={"mb-4 text-headline-large font-black text-on-surface-light dark:text-on-surface-dark "}>
+                            {data?.title}
+                        </h1>
+                        <Breadcrumbs items={breadCrumbs}/>
+                        <div className={"mt-4 text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
+                            دسته بندی :
+                            <Link
+                                className={"rtl:mr-2 ltr:ml-2 text-primary-light dark:text-primary-dark hover:underline dark:hover:text-on-primary-container-dark hover:text-on-primary-container-light"}
+                                href={'/blog/' + data.categories.slug}>
+                                {data.categories.title}
+                            </Link>
                         </div>
-                    </div>
+                        <div
+                            className={"mt-3 flex text-on-surface-variant-light dark:text-on-surface-variant-dark items-center space-x-reverse space-x-6"}>
+                            <div className={"flex items-center"}>
+                                <Icon type={"outline"}>
+                                    update
+                                </Icon>
+
+                                <ConvertDate date={data?.updatedAt}/>
+                            </div>
+                            <div className={"flex items-center"}>
+                                <Icon type={"outline"}>
+                                    calendar_month
+                                </Icon>
+
+                                <ConvertDate date={data?.createdAt}/>
+                            </div>
+                        </div>
+                    </header>
                     <div className={"max-w-4xl mt-4"}>
                         <Image width={1920} quality={100} height={1080} alt={""} className={"rounded-[24px]"}
                                layout={"responsive"}
@@ -158,7 +216,7 @@ export default function Home(props) {
                         })}
                     </div>
                 </div>
-            </div>
+            </article>
         </MainLayout>
     )
 }

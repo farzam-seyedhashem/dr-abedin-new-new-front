@@ -7,12 +7,24 @@ import PageHeader from "@/components/PageHeader";
 import Image from 'next/legacy/image'
 import Link from "next/link";
 import {useState} from "react";
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export default function Home(props) {
     const {...other} = props
     const breadCrumbs = [
-        {name: "تماس با ما", href: "/contact-us", current: true},
+        {name: "درباره ما", href: "/about-us", current: true},
     ]
+    const siteSetting = {
+        metaTitle: "درباره ما | دکتر بهزاد عابدین",
+        metaDescription: "درباره ی دکتر بهزاد عابدین جراح زیبایی بینی در تهران و وبسایت رسمی ایشان بیشتر بدانید.",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
     const [openVideo, setOpenVideo] = useState(false)
 
     const drFeatures = [
@@ -21,24 +33,27 @@ export default function Home(props) {
         "بیش از ۱۳ سال تجربه در جراحی بینی ( رینوپلاستی ) و سایر اعمال جراحی تخصصی رشته گوش، گلو، بینی و جراحی سر و گردن.",
     ]
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
 
             <div className={"px-4 md:px-6 pt-6"}>
                 {/*<PageHeader breadcrumbs={breadCrumbs} title={""}*/}
                 {/*            shortDescription={""}*/}
                 {/*            imageAlt={"تماس با ما"} imageUrl={"/contact-us-top.jpg"}/>*/}
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
+                        <div className={"absolute top-10 right-10"}>
+                            <Breadcrumbs items={breadCrumbs}/>
+                        </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 درباره ما
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"درباره ی دکتر بهزاد عابدین و وبسایت رسمی ایشان بیشتر بدانید."}
+                                {"درباره ی دکتر بهزاد عابدین جراح زیبایی بینی در تهران و وبسایت رسمی ایشان بیشتر بدانید."}
                             </p>
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
                         <Image layout={"fill"} objectFit={"cover"} src={"/dr-abedin-3.jpeg"}/>

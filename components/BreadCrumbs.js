@@ -15,14 +15,14 @@ export default function Breadcrumbs({items, ldName, white}) {
             "@type": "ListItem",
             "position": ${i + 2},
             "name": "${ldName}",
-            "item": "https://bumbleauto.com${items[i].href}"
+            "item": "https://dr-abedin.com${items[i].href}"
         }`
             } else {
                 JSON += `{
             "@type": "ListItem",
             "position": ${i + 2},
             "name": "${items[i].name}",
-            "item": "https://bumbleauto.com${items[i].href}"
+            "item": "https://dr-abedin.com${items[i].href}"
         },`
             }
 
@@ -41,8 +41,8 @@ export default function Breadcrumbs({items, ldName, white}) {
                     "itemListElement": [{
                     "@type": "ListItem",
                     "position": 1,
-                    "name": "Bumble Auto",
-                    "item": "https://bumbleauto.com"
+                    "name": "دکتر بهزاد عابدین",
+                    "item": "https://dr-abedin.com"
                 },` + BreadcrumbsJSON(items) + `]
                 }`
                 }}>
@@ -53,13 +53,13 @@ export default function Breadcrumbs({items, ldName, white}) {
                 <ol className="flex whitespace-nowrap text-label-medium overflow-scroll scrollbar-hide items-center space-x-1">
                     <li>
                     <span property="itemListElement" typeof="ListItem">
-                        <Link href="/" title={"Go to Bumble Auto."} property="item" typeof={"WebPage"}
+                        <Link href="/" title={"دکتر بهزاد عابدین"} property="item" typeof={"WebPage"}
                               className={"dark:text-on-surface-variant-dark text-on-surface-variant-light rounded-[8px] px-4 h-[32px] hover:text-primary-light dark:hover:text-primary-dark hover:bg-primary-light dark:hover:bg-primary-dark hover:bg-opacity-[8%] dark:hover:bg-opacity-[8%] justify-center  inline-flex items-center"}>
                             {/*<HomeIcon className="flex-shrink-0 h-5 w-5 mr-2" aria-hidden="true"/>*/}
-                            <Icon className={"h-fit"} weight={500} type={"fill"} size={18}>
+                            <Icon className={"h-fit ml-2"} weight={500} type={"fill"} size={18}>
                                 home
                             </Icon>
-                            {/*<span className={"hover:underline"} property="name">Bumble Auto</span>*/}
+                            <span className={"hover:underline"} property="name">دکتر بهزاد عابدین</span>
                         </Link>
                          <meta property="position" content="1"/>
                     </span>
@@ -67,11 +67,13 @@ export default function Breadcrumbs({items, ldName, white}) {
                     {items.map((page, i) => (
                         <li key={page.name}>
                             <div className="flex items-center">
+                                <em>
                                 <Icon
                                     className={`text-on-surface-variant-light dark:text-on-surface-variant-dark`}
                                     weight={500} type={"fill"} size={18}>
-                                    chevron_right
+                                    chevron_left
                                 </Icon>
+                                </em>
                                 {i !== items.length - 1 ?
                                     <span className={"hover:underline"} property="itemListElement" typeof="ListItem">
 
@@ -92,7 +94,7 @@ export default function Breadcrumbs({items, ldName, white}) {
                                     <span property="itemListElement" typeof="ListItem">
                                         <span property="name"
                                               className={"dark:text-on-surface-dark text-on-surface-light px-4 h-[32px] flex items-center justify-center"}>{page.name}</span>
-                                        <meta property="url" content=""/>
+                                        <meta property="url" content={page.href}/>
                                         <meta property="position" content={i + 2}/>
                             </span>}
                             </div>

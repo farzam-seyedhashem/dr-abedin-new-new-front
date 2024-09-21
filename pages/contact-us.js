@@ -5,22 +5,37 @@ import Typography from "@/components/assets/Typography";
 import Space from "@/components/assets/Space";
 import PageHeader from "@/components/PageHeader";
 import Image from 'next/legacy/image'
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export default function Home(props) {
     const {...other} = props
     const breadCrumbs = [
         {name: "تماس با ما", href: "/contact-us", current: true},
     ]
+    const siteSetting = {
+        metaTitle: "تماس با ما | دکتر بهزاد عابدین",
+        metaDescription: "در این صفحه راه های ارتباطی با دکتر بهزاد عابدین، متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح زیبایی بینی در تهران ذکر شده است",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
             <div className={"px-4 md:md:px-6 px-4 pt-6"}>
                 {/*<PageHeader breadcrumbs={breadCrumbs} title={""}*/}
                 {/*            shortDescription={""}*/}
                 {/*            imageAlt={"تماس با ما"} imageUrl={"/contact-us-top.jpg"}/>*/}
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
+                        <div className={"absolute top-10 right-10"}>
+                            <Breadcrumbs items={breadCrumbs}/>
+                        </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 تماس با ما
@@ -29,7 +44,7 @@ export default function Home(props) {
                                 {"                                در این صفحه راه های ارتباطی با دکتر بهزاد عابدین، متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران ذکر شده است"}
                             </p>
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative rounded-[24px] bg-white overflow-hidden h-[220px] md:h-[523px]"}>
                         <Image layout={"fill"} objectFit={"contain"} src={"/contact-thumbnail.jpg"}/>

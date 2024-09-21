@@ -7,9 +7,21 @@ import {useState} from "react";
 
 export default function Home(props) {
     const {...other} = props
-const [openVideo,setOpenVideo] = useState(false)
+    const [openVideo, setOpenVideo] = useState(false)
+    const siteSetting = {
+        metaTitle: "دکتر بهزاد عابدین | جراحی زیبایی بینی - جراحی رینوپلاستی - جراح زیبایی | جراح بینی در تهران",
+        metaDescription: "وبسایت رستمی دکتر بهزاد عابدین، جراح زیبایی بینی و جراح رینوپلاستی بینی در تهران",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
+
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
             <div className={"px-4 md:px-6 pt-6"}>
                 <div
                     className={"md:flex md:h-[700px]  bg-surface-light dark:bg-surface-dark md:space-x-2 md:space-x-reverse"}>

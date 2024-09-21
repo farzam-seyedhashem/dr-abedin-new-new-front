@@ -8,13 +8,25 @@ import Image from 'next/legacy/image'
 import Link from "next/link";
 import useSWR from "swr";
 import {useState} from "react";
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export default function Home(props) {
     const {...other} = props
     const [openVideo,setOpenVideo] = useState(false)
     const breadCrumbs = [
-        {name: "تماس با ما", href: "/contact-us", current: true},
+        {name: "خدمات", href: "/services", current: true},
     ]
+    const siteSetting = {
+        metaTitle: "خدمات | دکتر بهزاد عابدین",
+        metaDescription: "لیست خدمات دکتر بهزاد عابدین جراح زیبایی بینی در تهران",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
     const drFeatures = [
         "جراحي اصلاح فرم بینی ، رفع انحراف بینی و بازسازی راه هوایی ( سپتورینوپلاستی )",
         "جراحی اصلاح دفرمیتی گوش ( اتوپلاستی )",
@@ -25,23 +37,49 @@ export default function Home(props) {
 
     ]
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
+            {/*<script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(*/}
+            {/*        {*/}
+            {/*            "@context": "https://schema.org",*/}
+            {/*            "@type": "VideoObject",*/}
+            {/*            "name": "معرفی دکتر بهزاد عابدین",*/}
+            {/*            "description": "ویدئو معرفی دکتر بهزاد عابدین متخصص گوش، حلق، بینی، جراح بینی و رینوپلاستی در تهران",*/}
+            {/*            "thumbnailUrl": [*/}
+            {/*                "https://dr-abedin.com/index-video-thumbnail.jpg",*/}
+            {/*            ],*/}
+            {/*            "uploadDate": "2024-09-21",*/}
+            {/*            "duration": "PT1M0S",*/}
+            {/*            "contentUrl": "https://www.dr-abedin.com/index-video.MP4",*/}
+            {/*            "embedUrl": "https://www.example.com/embed/123",*/}
+            {/*            "interactionStatistic": {*/}
+            {/*                "@type": "InteractionCounter",*/}
+            {/*                "interactionType": {"@type": "WatchAction"},*/}
+            {/*                "userInteractionCount": 5647018*/}
+            {/*            },*/}
+            {/*            "regionsAllowed": ["US", "NL"]*/}
+            {/*        }*/}
+            {/*    )}}>*/}
+
+            {/*</script>*/}
             <div className={"px-4 md:px-6 pt-6"}>
                 {/*<PageHeader breadcrumbs={breadCrumbs} title={""}*/}
                 {/*            shortDescription={""}*/}
                 {/*            imageAlt={"تماس با ما"} imageUrl={"/contact-us-top.jpg"}/>*/}
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
+                        <div className={"absolute top-10 right-10"}>
+                            <Breadcrumbs items={breadCrumbs}/>
+                        </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 خدمات دکتر بهزاد عابدین
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"فهرست خدمات و جراحی های انجام شده توسط دکتر بهزاد عابدین، متخصص گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران"}
+                                {"لیست خدمات دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
                             </p>
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative bg-white rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
                         <Image layout={"fill"} objectFit={"cover"} src={"/services-thumbnail.jpg"}/>
@@ -89,7 +127,8 @@ export default function Home(props) {
                         {"اعمال جراحي انجام شده توسط دکتر بهزاد عابدین"}
                     </h2>
                     <ul className={"list-star-rtl mr-[22px]"}>
-                        {drFeatures.map((item,i) =>  <li key={i} className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
+                        {drFeatures.map((item, i) => <li key={i}
+                                                         className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
                             <h6>
                                 {item}
                             </h6>
@@ -171,7 +210,6 @@ export default function Home(props) {
                 </div>
 
             </div>}
-
 
 
         </MainLayout>

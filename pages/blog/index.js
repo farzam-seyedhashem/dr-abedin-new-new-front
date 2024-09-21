@@ -6,6 +6,7 @@ import {ContentConvertor} from "@/_helper/ContentConvertor";
 import {API, ImageBaseURL} from '@/config'
 import Icon from "@/components/assets/Icon";
 import TruncText from "@/_helper/TruncText";
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export async function getStaticProps() {
     const getPost = await fetch(`${API}/blog`)
@@ -25,24 +26,38 @@ export default function Home(props) {
     const breadCrumbs = [
         {name: "مقالات", href: "/blog", current: true},
     ]
-
+    const siteSetting = {
+        metaTitle: "مقالات | دکتر بهزاد عابدین",
+        mataDescription: "صفحه مقالات تخصصی دکتر بهزاد عابدین جراح زیبایی بینی در تهران",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
 
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
             <div className={"px-4 md:px-6 pt-6"}>
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div>
+                            <div className={"absolute top-10 right-10"}>
+                            <Breadcrumbs items={breadCrumbs}/>
+                            </div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 مقالات دکتر بهزاد عابدین
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"صفحه مقالات تخصصی دکتر بهزاد عابدین"}
+                                {"صفحه مقالات تخصصی دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
                             </p>
+
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative bg-white rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
                         <Image layout={"fill"} objectFit={"contain"} src={"/blog-thumbnail.jpg"}/>
@@ -88,9 +103,9 @@ export default function Home(props) {
                                            src={`${ImageBaseURL}${post.thumbnail.url}`}/>
                                 </Link>
                                 <div className={"pt-6 pb-6 px-6"}>
-                                    <Link href={`/blog/${post.categories.slug}`}>
+                                    <Link href={`/blog/${post?.categories?.slug}`}>
                                         <h3 className={"text-primary-light dark:text-primary-dark text-label-large mb-1"}>
-                                            {post.categories.title}
+                                            {post?.categories?.title}
                                         </h3>
                                     </Link>
                                     <Link href={`/${post.slug}`}>

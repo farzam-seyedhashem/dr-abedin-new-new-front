@@ -7,6 +7,7 @@ import Button from "@/components/buttons/Button";
 import {API, ImageBaseURL} from '@/config'
 import Icon from "@/components/assets/Icon";
 import TruncText from "@/_helper/TruncText";
+import Breadcrumbs from "@/components/BreadCrumbs";
 
 export async function getServerSideProps(context) {
     const getBlogCategories = await fetch(API + `/blog-category?per_page=1000`);
@@ -30,29 +31,43 @@ export async function getServerSideProps(context) {
 export default function Home(props) {
     const {posts, categories, cat, ...other} = props
     const breadCrumbs = [
-        {name: "مقالات", href: "/blog", current: true},
+        {name: "مقالات", href: "/blog", current: false},
+        {name: cat.title, href: `/blog/${cat.slug}`, current: true},
     ]
-
+    const siteSetting = {
+        metaTitle: `${cat.metaTitle}`,
+        metaDescription: `${cat.metaDescription}`,
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
 
     return (
-        <MainLayout {...other}>
+        <MainLayout siteSetting={siteSetting} {...other}>
             <div className={"px-4 md:px-6 pt-6"}>
 
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div>
+                            <div className={"absolute top-10 right-10"}>
+                                <Breadcrumbs items={breadCrumbs}/>
+                            </div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
-                                مقالات دکتر بهزاد عابدین
+                                {cat.title}
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"صفحه مقالات تخصصی دکتر بهزاد عابدین"}
+                                {cat.metaDescription}
                             </p>
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative bg-white rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
-                        <Image layout={"fill"} objectFit={"contain"} src={"/blog-thumbnail.jpg"}/>
+                    <Image layout={"fill"} objectFit={"contain"} src={"/blog-thumbnail.jpg"}/>
                     </div>
                 </div>
                 <Space size={"normal"}/>
@@ -88,7 +103,7 @@ export default function Home(props) {
 
                     </div>
                     <div className={"grid grid-cols-1 md:grid-cols-4 gap-4"}>
-                       
+
                         {posts.data.map((post, index) => (
                             <div
                                 className={"rounded-[24px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}

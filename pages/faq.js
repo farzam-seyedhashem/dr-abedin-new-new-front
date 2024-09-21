@@ -7,6 +7,8 @@ import Typography from "../components/assets/Typography";
 import Space from "../components/assets/Space";
 import React from "react";
 import Image from 'next/legacy/image'
+import Script from "next/script";
+import Breadcrumbs from "../components/BreadCrumbs";
 
 // const faqs = [
 //     {
@@ -16,7 +18,7 @@ import Image from 'next/legacy/image'
 //     // More questions...
 // ]
 const breadCrumbs = [
-    {name: 'FAQ', href: "/faq"},
+    {name: 'سوالات متداول', href: "/faq",current: true},
 
 ]
 
@@ -81,8 +83,11 @@ export default function Example(props) {
                 title: "جراحي بيني در افراد ديابتيك مقدور است؟",
                 content: "بله، اگر قند خون به خوبي تحت كنترل شود با رعايت دقيق پروتكل تنظيم قند، قبل و حين بيهوشي انجام رينوپلاستي براي افراد ديابتيك بلامانع است."
             },
-            {title: "انجام مشاوره قلب براي بيهوشي ضرورت دارد؟", content: "براي افراد كمتر از ٤٥ سال در صورتي كه سابقه قبلي مشكلات قلب و عروق نداشته باشند انجام مشاوره قلب ضروري نيست."},
-           
+            {
+                title: "انجام مشاوره قلب براي بيهوشي ضرورت دارد؟",
+                content: "براي افراد كمتر از ٤٥ سال در صورتي كه سابقه قبلي مشكلات قلب و عروق نداشته باشند انجام مشاوره قلب ضروري نيست."
+            },
+
             {
                 title: "آيا افراد مبتلا به كم كاري تيروئيد مي توانند جراحي بيني انجام دهند؟",
                 content: "بله، در صورتي كه آزمايش هورمون هاي تيروئيد همزمان با مصرف لووتيروكسين كاملا نرمال باشد انجام بيهوشي و جراحي بيني بلامانع است."
@@ -105,23 +110,61 @@ export default function Example(props) {
             },
         ]
     }
+    const items = []
+    faqs.data.map(item =>
+        items.push({
+            "@type": "Question",
+            "name": item.title,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.content
+            }
+        })
+    )
+    const siteSetting = {
+        metaTitle: "سوالات متداول | دکتر بهزاد عابدین",
+        metaDescription: "سوالات متداول درباره ی جراحی زیبایی بینی در وبسایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران",
+        websiteURL: "https://dr-abedin.com",
+        siteName: "دکتر بهزاد عابدین",
+        robot: false,
+        position: "35.78666374650412, 51.43571546845197",
+        placename: "تهران",
+        region: "ایران",
+        themeColor: "#235FA6",
+    }
+
     return (
-        <Layout {...other} pageTitle={"FAQ"} breadCrumbs={breadCrumbs}>
+        <Layout siteSetting={siteSetting} {...other} pageTitle={"سوالات متداول"}>
+            <Script defer id={"product-ld"} key={`JSON-LD`} type='application/ld+json' dangerouslySetInnerHTML={{
+                __html: JSON.stringify(
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": items
+                    }
+                )
+            }}>
+
+            </Script>
+
             {/*<PageHeader isFull title={"FAQ"} metaTitle={page.metaTitle} breadCrumbs={breadCrumbs}/>*/}
             <div className={"px-4 md:px-6 pt-6"}>
                 {/*<Space size={"large"}/>*/}
                 <div className={"grid grid-cols-1 md:grid-cols-2 gap-2"}>
-                    <div
+                    <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
+                        <div className={"absolute top-10 right-10"}>
+                            <Breadcrumbs items={breadCrumbs}/>
+                        </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 سوالات متداول
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"درباره ی دکتر بهزاد عابدین و وبسایت رسمی ایشان بیشتر بدانید."}
+                                {"سوالات متداول درباره ی جراحی زیبایی بینی در وبسایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
                             </p>
                         </div>
-                    </div>
+                    </header>
 
                     <div className={"relative rounded-[24px] bg-white overflow-hidden h-[220px] md:h-[523px]"}>
                         <Image layout={"fill"} objectFit={"contain"} src={"/faq-thumbnail.jpg"}/>
@@ -130,13 +173,15 @@ export default function Example(props) {
                 <Space size={"normal"}/>
                 <div className={"container mx-auto"}>
                     {faqs.data.map((faq, i) => (<div key={i}
-                                                            className={"text-on-surface-light  items-start dark:text-on-surface-dark flex mb-4 max-w-4xl"}>
+                                                     className={"text-on-surface-light  items-start dark:text-on-surface-dark flex mb-4 max-w-4xl"}>
                         <Typography type={"p"}
-                            className={"flex items-center ml-4 justify-center font-medium w-[24px] h-[32px] text-inverse-on-surface-light dark:text-inverse-on-surface-dark bg-inverse-surface-light dark:bg-inverse-surface-dark rounded-[12px]"}>
-                            {(i + 1).toString().replace("0","۰").replace("1","۱").replace("2","۲").replace("3","۳").replace("4","۴").replace("5","۵").replace("6","۶").replace("7","۷").replace("8","۸").replace("9","۹")}
+                                    className={"flex items-center ml-4 justify-center font-medium w-[24px] h-[32px] text-inverse-on-surface-light dark:text-inverse-on-surface-dark bg-inverse-surface-light dark:bg-inverse-surface-dark rounded-[12px]"}>
+                            {(i + 1).toString().replace("0", "۰").replace("1", "۱").replace("2", "۲").replace("3", "۳").replace("4", "۴").replace("5", "۵").replace("6", "۶").replace("7", "۷").replace("8", "۸").replace("9", "۹")}
                         </Typography>
-                        <Typography type={"p"} className={"!text-on-surface-variant-light dark:!text-on-surface-variant-dark font-light w-[calc(100%_-_24px)] py-1"}>
-                            <strong className={"mr-1.5 font-bold !text-on-surface-light dark:!text-on-surface-dark block"}>
+                        <Typography type={"p"}
+                                    className={"!text-on-surface-variant-light dark:!text-on-surface-variant-dark font-light w-[calc(100%_-_24px)] py-1"}>
+                            <strong
+                                className={"mr-1.5 font-bold !text-on-surface-light dark:!text-on-surface-dark block"}>
                                 {faq.title}
                             </strong>
                             {faq.content}
