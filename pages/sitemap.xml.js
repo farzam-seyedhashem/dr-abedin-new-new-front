@@ -1,34 +1,34 @@
 import React from "react";
 import {useRouter} from "next/router";
 
-export const getServerSideProps = async ({req,res}) => {
+// export const getServerSideProps = async ({req,res}) => {
     // const allPost = await allPosts()
     // const allCategory = await allCategories()
 // const router = useRouter()
-    const url = "dr-abedin.com"
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <sitemap>
-    <loc>https://${url}/post-sitemap.xml</loc>
-    </sitemap>
-    <sitemap>
-                    <loc>https://${url}/pages-sitemap.xml</loc>
-                </sitemap>
-                <sitemap>
-                    <loc>https://${url}/post-category-sitemap.xml</loc>
-                </sitemap>
-               
-     </sitemapindex>
-  `;
-
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemap);
-    res.end();
-
-    return {
-        props: {},
-    };
-};
+//     const url = "dr-abedin.com"
+//     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+//     <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+//     <sitemap>
+//     <loc>https://${url}/post-sitemap.xml</loc>
+//     </sitemap>
+//     <sitemap>
+//                     <loc>https://${url}/pages-sitemap.xml</loc>
+//                 </sitemap>
+//                 <sitemap>
+//                     <loc>https://${url}/post-category-sitemap.xml</loc>
+//                 </sitemap>
+//
+//      </sitemapindex>
+//   `;
+//
+//     res.setHeader("Content-Type", "text/xml");
+//     res.write(sitemap);
+//     res.end();
+//
+//     return {
+//         props: {},
+//     };
+// };
 export default function Home(props) {
     return (
         <div>

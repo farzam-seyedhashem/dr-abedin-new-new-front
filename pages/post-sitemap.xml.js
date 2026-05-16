@@ -54,29 +54,29 @@ const getAllProducts = async (locale) => {
     // }))
 }
 
-export const getServerSideProps = async ({res, locale}) => {
-    // const allPost = await allPosts()
-    // const allCategory = await allCategories()
-    const allProducts = await getAllProducts(locale)
-
-    const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-     
-    ${allProducts.map(item =>
-        addPage('/' + item.slug, item.updatedAt, 'monthly', "0.8")
-    )}
-    
-    </urlset>
-  `;
-
-    res.setHeader("Content-Type", "text/xml");
-    res.write(sitemap.replaceAll(",",""));
-    res.end();
-
-    return {
-        props: {},
-    };
-};
+// export const getServerSideProps = async ({res, locale}) => {
+//     // const allPost = await allPosts()
+//     // const allCategory = await allCategories()
+//     const allProducts = await getAllProducts(locale)
+//
+//     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+//     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+//
+//     ${allProducts.map(item =>
+//         addPage('/' + item.slug, item.updatedAt, 'monthly', "0.8")
+//     )}
+//
+//     </urlset>
+//   `;
+//
+//     res.setHeader("Content-Type", "text/xml");
+//     res.write(sitemap.replaceAll(",",""));
+//     res.end();
+//
+//     return {
+//         props: {},
+//     };
+// };
 const Sitemap = () => {
 };
 

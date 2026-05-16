@@ -9,23 +9,23 @@ import Icon from "@/components/assets/Icon";
 import TruncText from "@/_helper/TruncText";
 import Breadcrumbs from "@/components/BreadCrumbs";
 
-export async function getServerSideProps(context) {
-    const getBlogCategories = await fetch(API + `/blog-category?per_page=1000`);
-    const categories = await getBlogCategories.json();
-
-    const getCategory = await fetch(API + `/blog-category/${context.params.slug}`);
-    const cat = await getCategory.json();
-
-    const getBlogs = await fetch(API + `/blog?per_page=12&page=1&category=${cat._id}`);
-    const posts = await getBlogs.json();
-    return {
-        props: {
-            posts,
-            cat,
-            categories,
-        },
-    }
-}
+// export async function getServerSideProps(context) {
+//     const getBlogCategories = await fetch(API + `/blog-category?per_page=1000`);
+//     const categories = await getBlogCategories.json();
+//
+//     const getCategory = await fetch(API + `/blog-category/${context.params.slug}`);
+//     const cat = await getCategory.json();
+//
+//     const getBlogs = await fetch(API + `/blog?per_page=12&page=1&category=${cat._id}`);
+//     const posts = await getBlogs.json();
+//     return {
+//         props: {
+//             posts,
+//             cat,
+//             categories,
+//         },
+//     }
+// }
 
 
 export default function Home(props) {

@@ -8,18 +8,18 @@ import Icon from "@/components/assets/Icon";
 import TruncText from "@/_helper/TruncText";
 import Breadcrumbs from "@/components/BreadCrumbs";
 
-export async function getStaticProps() {
-    const getPost = await fetch(`${API}/blog`)
-    const getCategory = await fetch(`${API}/blog-category`)
-    const posts = await getPost.json()
-    const categories = await getCategory.json()
-    return {
-        props: {
-            categories,
-            posts,
-        },
-    }
-}
+// export async function getStaticProps() {
+//     const getPost = await fetch(`${API}/blog`)
+//     const getCategory = await fetch(`${API}/blog-category`)
+//     const posts = await getPost.json()
+//     const categories = await getCategory.json()
+//     return {
+//         props: {
+//             categories,
+//             posts,
+//         },
+//     }
+// }
 
 export default function Home(props) {
     const {posts, categories, ...other} = props
@@ -78,51 +78,51 @@ export default function Home(props) {
                                     همه دسته بندی ها
                                 </Link>
                             </li>
-                            {categories.data.map((category, index) => <li key={index}>
-                                <Link
-                                    className={"text-on-surface-variant-light dark:text-on-surface-variant-dark inline-flex md:flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}
-                                    href={`/blog/${category.slug}`}>
-                                    <div className={"h-[20px]"}>
+                            {/*{categories.data.map((category, index) => <li key={index}>*/}
+                            {/*    <Link*/}
+                            {/*        className={"text-on-surface-variant-light dark:text-on-surface-variant-dark inline-flex md:flex items-center px-4 border-outline-variant-light dark:border-outline-variant-dark border h-[32px] rounded-[8px] text-label-large"}*/}
+                            {/*        href={`/blog/${category.slug}`}>*/}
+                            {/*        <div className={"h-[20px]"}>*/}
 
-                                    </div>
-                                    {category.title}
-                                </Link>
-                            </li>)}
+                            {/*        </div>*/}
+                            {/*        {category.title}*/}
+                            {/*    </Link>*/}
+                            {/*</li>)}*/}
                         </ul>
 
                     </div>
                     <div className={"grid grid-cols-1 md:grid-cols-4 gap-4"}>
 
-                        {posts.data.map((post, index) => (
-                            <div
-                                className={"rounded-[24px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}
-                                key={index}>
-                                <Link href={`/${post.slug}`}>
-                                    <Image className={"rounded-[24px]"} width={1920} height={1280} objectFit={"cover"}
-                                           layout={"responsive"} alt={post.title}
-                                           src={`${ImageBaseURL}${post.thumbnail.url}`}/>
-                                </Link>
-                                <div className={"pt-6 pb-6 px-6"}>
-                                    <Link href={`/blog/${post?.categories?.slug}`}>
-                                        <h3 className={"text-primary-light dark:text-primary-dark text-label-large mb-1"}>
-                                            {post?.categories?.title}
-                                        </h3>
-                                    </Link>
-                                    <Link href={`/${post.slug}`}>
-                                        <h2 className={"text-title-large font-bold text-on-surface-light dark:text-on-surface-dark "}>
-                                            {post.title}
-                                        </h2>
-                                    </Link>
+                        {/*{posts.data.map((post, index) => (*/}
+                        {/*    <div*/}
+                        {/*        className={"rounded-[24px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}*/}
+                        {/*        key={index}>*/}
+                        {/*        <Link href={`/${post.slug}`}>*/}
+                        {/*            <Image className={"rounded-[24px]"} width={1920} height={1280} objectFit={"cover"}*/}
+                        {/*                   layout={"responsive"} alt={post.title}*/}
+                        {/*                   src={`${ImageBaseURL}${post.thumbnail.url}`}/>*/}
+                        {/*        </Link>*/}
+                        {/*        <div className={"pt-6 pb-6 px-6"}>*/}
+                        {/*            <Link href={`/blog/${post?.categories?.slug}`}>*/}
+                        {/*                <h3 className={"text-primary-light dark:text-primary-dark text-label-large mb-1"}>*/}
+                        {/*                    {post?.categories?.title}*/}
+                        {/*                </h3>*/}
+                        {/*            </Link>*/}
+                        {/*            <Link href={`/${post.slug}`}>*/}
+                        {/*                <h2 className={"text-title-large font-bold text-on-surface-light dark:text-on-surface-dark "}>*/}
+                        {/*                    {post.title}*/}
+                        {/*                </h2>*/}
+                        {/*            </Link>*/}
 
-                                    <p className={"text-on-surface-variant-light dark:text-on-surface-variant-dark mt-2"}>
-                                        <TruncText >
-                                        {ContentConvertor(post.content)}
-                                        </TruncText>
-                                    </p>
-                                </div>
+                        {/*            <p className={"text-on-surface-variant-light dark:text-on-surface-variant-dark mt-2"}>*/}
+                        {/*                <TruncText >*/}
+                        {/*                {ContentConvertor(post.content)}*/}
+                        {/*                </TruncText>*/}
+                        {/*            </p>*/}
+                        {/*        </div>*/}
 
-                            </div>
-                        ))}
+                        {/*    </div>*/}
+                        {/*))}*/}
 
 
                     </div>
