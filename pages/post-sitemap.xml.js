@@ -18,16 +18,16 @@ function addPage(route, lastMod, changeFreq, priority) {
 }
 
 const getProduct = async (page, per_page, lang) => {
-    const getProduct = await fetch(API + '/blog?per_page=' + per_page + '&page=' + page + '&lang=' + lang, {
-        method: "GET",
-        headers: {
-            // update with your user-agent
-            "User-Agent": "*",
-            Accept: "application/json; charset=UTF-8",
-        },
-    });
-    const products = await getProduct.json()
-    return products
+    // const getProduct = await fetch(API + '/blog?per_page=' + per_page + '&page=' + page + '&lang=' + lang, {
+    //     method: "GET",
+    //     headers: {
+    //         // update with your user-agent
+    //         "User-Agent": "*",
+    //         Accept: "application/json; charset=UTF-8",
+    //     },
+    // });
+    // const products = await getProduct.json()
+    // return products
 }
 
 const getAllProducts = async (locale) => {
