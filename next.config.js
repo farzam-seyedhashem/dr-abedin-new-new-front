@@ -3,6 +3,7 @@
 
 const nextConfig = {
   // i18n,
+  productionBrowserSourceMaps: false,
   reactStrictMode: false,
   images: {
     minimumCacheTTL: 31536000,
