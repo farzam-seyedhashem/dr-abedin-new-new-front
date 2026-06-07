@@ -1,7 +1,7 @@
 /* This example requires Tailwind CSS v2.0+ */
 import BreadCrumbs from '../components/BreadCrumbs'
 import Layout from '../layouts/Main'
-import {API} from "../config";
+import { API } from "../config";
 import PageHeader from "../components/PageHeader";
 import Typography from "../components/assets/Typography";
 import Space from "../components/assets/Space";
@@ -18,13 +18,13 @@ import Breadcrumbs from "../components/BreadCrumbs";
 //     // More questions...
 // ]
 const breadCrumbs = [
-    {name: 'سوالات متداول', href: "/faq",current: true},
+    { name: 'سوالات متداول', href: "/faq", current: true },
 
 ]
 
 
 export default function Example(props) {
-    const {...other} = props
+    const { ...other } = props
     const faqs = {
         data: [
             {
@@ -154,32 +154,32 @@ export default function Example(props) {
                     <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div className={"absolute top-10 right-10"}>
-                            <Breadcrumbs items={breadCrumbs}/>
+                            <Breadcrumbs items={breadCrumbs} />
                         </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 سوالات متداول
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"سوالات متداول درباره ی جراحی زیبایی بینی در وبسایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
+                                {"سوالات متداول درباره جراحی زیبایی بینی در وب سایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
                             </p>
                         </div>
                     </header>
 
                     <div className={"relative rounded-[24px] bg-white overflow-hidden h-[220px] md:h-[523px]"}>
-                        <Image layout={"fill"} objectFit={"contain"} src={"/faq-thumbnail.jpg"}/>
+                        <Image layout={"fill"} objectFit={"contain"} src={"/faq-thumbnail.jpg"} />
                     </div>
                 </div>
-                <Space size={"normal"}/>
+                <Space size={"normal"} />
                 <div className={"container mx-auto"}>
                     {faqs.data.map((faq, i) => (<div key={i}
-                                                     className={"text-on-surface-light  items-start dark:text-on-surface-dark flex mb-4 max-w-4xl"}>
+                        className={"text-on-surface-light  items-start dark:text-on-surface-dark flex mb-4 max-w-4xl"}>
                         <Typography type={"p"}
-                                    className={"flex items-center ml-4 justify-center font-medium w-[24px] h-[32px] text-inverse-on-surface-light dark:text-inverse-on-surface-dark bg-inverse-surface-light dark:bg-inverse-surface-dark rounded-[12px]"}>
+                            className={"flex items-center ml-4 justify-center font-medium w-[24px] h-[32px] text-inverse-on-surface-light dark:text-inverse-on-surface-dark bg-inverse-surface-light dark:bg-inverse-surface-dark rounded-[12px]"}>
                             {(i + 1).toString().replace("0", "۰").replace("1", "۱").replace("2", "۲").replace("3", "۳").replace("4", "۴").replace("5", "۵").replace("6", "۶").replace("7", "۷").replace("8", "۸").replace("9", "۹")}
                         </Typography>
                         <Typography type={"p"}
-                                    className={"!text-on-surface-variant-light dark:!text-on-surface-variant-dark font-light w-[calc(100%_-_24px)] py-1"}>
+                            className={"!text-on-surface-variant-light dark:!text-on-surface-variant-dark font-light w-[calc(100%_-_24px)] py-1"}>
                             <strong
                                 className={"mr-1.5 font-bold !text-on-surface-light dark:!text-on-surface-dark block"}>
                                 {faq.title}

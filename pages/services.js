@@ -7,14 +7,14 @@ import PageHeader from "@/components/PageHeader";
 import Image from 'next/legacy/image'
 import Link from "next/link";
 import useSWR from "swr";
-import {useState} from "react";
+import { useState } from "react";
 import Breadcrumbs from "@/components/BreadCrumbs";
 
 export default function Home(props) {
-    const {...other} = props
-    const [openVideo,setOpenVideo] = useState(false)
+    const { ...other } = props
+    const [openVideo, setOpenVideo] = useState(false)
     const breadCrumbs = [
-        {name: "خدمات", href: "/services", current: true},
+        { name: "خدمات", href: "/services", current: true },
     ]
     const siteSetting = {
         metaTitle: "خدمات | دکتر بهزاد عابدین",
@@ -28,11 +28,12 @@ export default function Home(props) {
         themeColor: "#235FA6",
     }
     const drFeatures = [
-        "جراحي اصلاح فرم بینی ، رفع انحراف بینی و بازسازی راه هوایی ( سپتورینوپلاستی )",
-        "جراحی اصلاح دفرمیتی گوش ( اتوپلاستی )",
-        "جااندازی شکستگی بینی",
-        "جراحی اندوسکوپیک بینی و سینوس ( FESS )",
-        "جراحی لوزه در اطفال و بزرگسالان",
+
+        " - جراحی اصلاح دفرمیتی بینی، رفع انحراف سپتوم و بازسازی راه هوایی (سپتوراینوپلاستی)",
+        "- جراحی اصلاح انحراف بینی و بازسازی راه هوایی به روش نوین اندوسکوپیک",
+        "- جراحی اندوسکوپیک بینی جهت درمان پولیپوز، سینوزیت مزمن و تومورهای بینی، سینوس و قاعده جمجمه",
+        "- سایر اعمال جراحی زیبایی مانند پروتز چانه (منتوپلاستی)، جراحی اصلاح دفرمیتی لاله گوش(اتوپلاستی) و …",
+        "- انجام اندوسکوپی تشخیصی بینی و سینوس در مطب و همچنین تمامی مراقبتهای پس از جراحی زیبایی بینی و اعمال جراحی درمانی توسط شخص ایشان"
         // "جااندازی شکستگی بینی",
 
     ]
@@ -69,7 +70,7 @@ export default function Home(props) {
                     <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div className={"absolute top-10 right-10"}>
-                            <Breadcrumbs items={breadCrumbs}/>
+                            <Breadcrumbs items={breadCrumbs} />
                         </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
@@ -82,7 +83,7 @@ export default function Home(props) {
                     </header>
 
                     <div className={"relative bg-white rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
-                        <Image layout={"fill"} objectFit={"cover"} src={"/services-thumbnail.jpg"}/>
+                        <Image layout={"fill"} objectFit={"cover"} src={"/services-thumbnail.jpg"} />
                     </div>
                 </div>
                 <div className={"mt-16 container mx-auto"}>
@@ -128,7 +129,7 @@ export default function Home(props) {
                     </h2>
                     <ul className={"list-star-rtl mr-[22px]"}>
                         {drFeatures.map((item, i) => <li key={i}
-                                                         className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
+                            className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
                             <h6>
                                 {item}
                             </h6>
@@ -162,23 +163,23 @@ export default function Home(props) {
                         className={"relative mt-10 w-full h-full relative rounded-[32px] overflow-hidden md:rounded-[64px]"}>
                         <div className={"aspect-w-16 aspect-h-10 relative"}>
                             <Image objectFit={"cover"} className={"z-10"} width={1135} height={768} layout={"fill"}
-                                   src={"/index-video-thumbnail.jpg"}/>
+                                src={"/index-video-thumbnail.jpg"} />
                         </div>
                         <div
                             className={"absolute z-20 inset-0 flex items-center justify-center rounded-2xl bg-black bg-opacity-25"}>
                             <button onClick={() => setOpenVideo(true)}
-                                    aria-label={"video-play"}
-                                    className={"relative  hover:bg-white hover:bg-opacity-[12%] transition duration-300 outline-none focus:border-2 focus:border-white rounded-3xl w-[92px] h-[92px] flex items-center justify-center"}>
+                                aria-label={"video-play"}
+                                className={"relative  hover:bg-white hover:bg-opacity-[12%] transition duration-300 outline-none focus:border-2 focus:border-white rounded-3xl w-[92px] h-[92px] flex items-center justify-center"}>
                                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M77.1461 39.9994C83.6068 52.0411 78.7255 62.9426 66.2666 66.2653C62.9426 78.7255 52.0411 83.6055 39.9994 77.1461C27.9577 83.6068 17.0561 78.7255 13.7334 66.2666C1.27453 62.9426 -3.60675 52.0411 2.85391 39.9994C-3.60675 27.9577 1.27453 17.0561 13.7334 13.7334C17.0561 1.27453 27.9577 -3.60675 39.9994 2.85391C52.0411 -3.60675 62.9426 1.27453 66.2653 13.7334C78.7255 17.0561 83.6055 27.9577 77.1461 39.9994Z"
-                                        fill="white"/>
+                                        fill="white" />
                                 </svg>
                                 <svg xmlns="http://www.w3.org/2000/svg" className={"absolute"} height="40px"
-                                     viewBox="0 0 24 24" width="40px" fill="#000000">
-                                    <path d="M0 0h24v24H0V0z" fill="none"/>
-                                    <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"/>
+                                    viewBox="0 0 24 24" width="40px" fill="#000000">
+                                    <path d="M0 0h24v24H0V0z" fill="none" />
+                                    <path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z" />
                                 </svg>
                             </button>
                         </div>
@@ -194,17 +195,17 @@ export default function Home(props) {
                     <div className={" w-full overflow-hidden overflow-hidden"}>
                         <div className="relative overflow-hidden aspect-video w-full h-full">
                             <video controls className={"rounded-[16px] w-full"}>
-                                <source src={"/index-video.MP4"}/>
+                                <source src={"/index-video.MP4"} />
                             </video>
                         </div>
                     </div>
                     <button onClick={() => setOpenVideo(false)}
-                            className={"bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl text-white md:h-12 md:w-12 h-10 w-10 flex items-center justify-center md:top-5 ltr:md:left-5 ltr:left-2 rtl:md:right-5 rtl:right-2 top-2  rounded-full absolute"}>
+                        className={"bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl text-white md:h-12 md:w-12 h-10 w-10 flex items-center justify-center md:top-5 ltr:md:left-5 ltr:left-2 rtl:md:right-5 rtl:right-2 top-2  rounded-full absolute"}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                             fill="currentColor">
-                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                            fill="currentColor">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
                             <path
-                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
                         </svg>
                     </button>
                 </div>

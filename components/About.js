@@ -1,18 +1,18 @@
-import {useState} from "react";
+import { useState } from "react";
 import Image from "next/image";
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import VideoThumb from '../public/video-thumb.jpg'
 import Button from "@/components/buttons/Button";
 import Link from "next/link";
 import GalleryDialog from "@/components/GalleryDialog";
-import  Icon from '@/components/assets/Icon'
+import Icon from '@/components/assets/Icon'
 export default function About(props) {
     const [openVideo, setOpenVideo] = useState(false)
     const router = useRouter()
-    const [isGalleryOpen,setIsGalleryOpen] = useState(false)
+    const [isGalleryOpen, setIsGalleryOpen] = useState(false)
     return (
         <>
-            <GalleryDialog openDialog={isGalleryOpen} setOpenDialog={setIsGalleryOpen}/>
+            <GalleryDialog openDialog={isGalleryOpen} setOpenDialog={setIsGalleryOpen} />
             <div className="relative bg-surface-light dark:bg-surface-dark  overflow-hidden">
                 <div className="container mx-auto sm:pt-20 pt-16">
                     <div
@@ -20,7 +20,7 @@ export default function About(props) {
                         <div
                             className={"aspect-h-9 aspect-w-16 md:aspect-h-14 md:aspect-w-9 lg:aspect-h-6 lg:aspect-w-8 h-fit rounded-[24px] md:rounded-[24px] overflow-hidden relative"}>
                             <Image priority={true} sizes={"50vw"} objectFit={"cover"} className={"z-10"} layout={"fill"}
-                                   src={"/dr-abedin-3.jpeg"}/>
+                                src={"/dr-abedin-3.jpeg"} />
                             {/*<div*/}
                             {/*    className={"absolute z-20 inset-0 flex items-center justify-center rounded-2xl bg-black bg-opacity-25"}>*/}
                             {/*    <button onClick={() => setOpenVideo(true)}*/}
@@ -46,11 +46,18 @@ export default function About(props) {
                             <h2 className="text-headline-medium  font-black dark:text-on-surface-dark text-on-surface-light">
                                 {/*<span className="inline">{t("Sale of different types of stones")}</span>{" "}*/}
                                 {/*<span className="inline">{t("Chalipa")}</span>*/}
-                                درباره ی دکتر بهزاد عابدین
+                                درباره دکتر بهزاد عابدین
                             </h2>
                             <p className="text-body-large mt-6 mb-2    text-on-surface-light dark:text-on-surface-dark">
-                                دکتر بهزاد عابدین متولد سال ۱۳۶۱ در تهران و دارای درجه دانشنامه ( بورد تخصصی ) در رشته
-                                جراحی گوش، گلو، بینی و جراحی سر و گردن می باشند.
+                                - دانش آموخته دوره پزشکی عمومی از دانشگاه علوم پزشکی ایران با رتبه برتر.
+                            </p>
+                            <p className="text-body-large mt-6 mb-2    text-on-surface-light dark:text-on-surface-dark">
+
+                                - دانش آموخته دوره تخصصی جراحی گوش، گلو، بینی و جراحی سر و گردن با اخذ درجه دانشنامه (بورد تخصصی) از دانشگاه علوم پزشکی شهید بهشتی.
+                            </p>
+                            <p className="text-body-large mt-6 mb-2    text-on-surface-light dark:text-on-surface-dark">
+
+                                - دانش آموخته دوره فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه از دانشگاه علوم پزشکی تهران با رتبه برتر.
                             </p>
                             <p className="text-body-large mt-6 mb-2    text-on-surface-light dark:text-on-surface-dark">
                                 در این وب سایت مطالبی در خصوص جراحی بینی و اعمال جراحی و خدمات انجام شده توسط ایشان و نیز مقالات آموزشی جهت راهنمایی بازدید کنندگان برای کسب اطلاعات لازم ارائه شده است.
@@ -85,11 +92,11 @@ export default function About(props) {
                             <div
                                 className="group relative rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
                                 <Link href={"/reserve"}>
-                                   <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
-                                    <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
-                                       calendar_month
-                                   </Icon>
-                                   </div>
+                                    <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
+                                        <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
+                                            calendar_month
+                                        </Icon>
+                                    </div>
                                     <p className="text-[24px] mb-2 leading-[32px] font-medium dark:text-on-secondary-container-dark text-on-secondary-container-light">
                                         نوبت دهی
                                     </p>
@@ -111,7 +118,7 @@ export default function About(props) {
                                         سوالات متداول
                                     </p>
                                     <p className="leading-[24px] text-on-secondary-container-light dark:text-on-secondary-container-dark">
-                                      لیست سوالات متداول را میتوانید با کلیک بر روی این بخش مشاهده نمایید
+                                        لیست سوالات متداول را میتوانید با کلیک بر روی این بخش مشاهده نمایید
                                     </p>
                                 </Link>
                             </div>
@@ -133,7 +140,7 @@ export default function About(props) {
                             {/*</div>*/}
                             <div
                                 className="relative group rounded-[24px] cursor-pointer w-full pt-20 pb-6 px-6  bg-surface-container-light dark:bg-surface-container-dark dark:hover:bg-secondary-container-dark hover:bg-secondary-container-light transition duration-300 ">
-                                <div onClick={()=>setIsGalleryOpen(true)}>
+                                <div onClick={() => setIsGalleryOpen(true)}>
                                     <div className={"flex items-center justify-center absolute top-4 left-4 group-hover:bg-secondary-light dark:group-hover:bg-secondary-dark bg-secondary-container-light dark:bg-secondary-container-dark rounded-[8px] h-[40px] w-[40px]"}>
                                         <Icon type={"outline"} className={"group-hover:text-on-secondary-light dark:group-hover:text-on-secondary-dark text-on-surface-light dark:text-on-surface-dark"}>
                                             image
@@ -160,18 +167,18 @@ export default function About(props) {
                     <div className={" w-full overflow-hidden overflow-hidden"}>
                         <div className="relative overflow-hidden aspect-video w-full h-full">
                             <video controls className={"rounded-[16px]"}>
-                                <source src={"/about-us-video.MP4"}/>
+                                <source src={"/about-us-video.MP4"} />
                             </video>
                         </div>
                     </div>
 
                     <button onClick={() => setOpenVideo(false)}
-                            className={"bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl text-white md:h-12 md:w-12 h-10 w-10 flex items-center justify-center md:top-5 ltr:md:left-5 ltr:left-2 rtl:md:right-5 rtl:right-2 top-2  rounded-full absolute"}>
+                        className={"bg-black bg-opacity-50 backdrop-filter backdrop-blur-xl text-white md:h-12 md:w-12 h-10 w-10 flex items-center justify-center md:top-5 ltr:md:left-5 ltr:left-2 rtl:md:right-5 rtl:right-2 top-2  rounded-full absolute"}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
-                             fill="currentColor">
-                            <path d="M0 0h24v24H0V0z" fill="none"/>
+                            fill="currentColor">
+                            <path d="M0 0h24v24H0V0z" fill="none" />
                             <path
-                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
                         </svg>
                     </button>
                 </div>

@@ -6,13 +6,13 @@ import Space from "@/components/assets/Space";
 import PageHeader from "@/components/PageHeader";
 import Image from 'next/legacy/image'
 import Link from "next/link";
-import {useState} from "react";
+import { useState } from "react";
 import Breadcrumbs from "@/components/BreadCrumbs";
 
 export default function Home(props) {
-    const {...other} = props
+    const { ...other } = props
     const breadCrumbs = [
-        {name: "درباره ما", href: "/about-us", current: true},
+        { name: "درباره ما", href: "/about-us", current: true },
     ]
     const siteSetting = {
         metaTitle: "درباره ما | دکتر بهزاد عابدین",
@@ -28,9 +28,10 @@ export default function Home(props) {
     const [openVideo, setOpenVideo] = useState(false)
 
     const drFeatures = [
-        "متولد سال ١٣٦١ در تهران",
-        "دارای درجه دانشنامه ( بورد تخصصی ) در جراحی گوش، گلو، بینی و جراحی سر و گردن و جراح بینی در تهران.",
-        "بیش از ۱۳ سال تجربه در جراحی بینی ( رینوپلاستی ) و سایر اعمال جراحی تخصصی رشته گوش، گلو، بینی و جراحی سر و گردن.",
+        "- دانش آموخته دوره پزشکی عمومی از دانشگاه علوم پزشکی ایران با رتبه برتر.",
+        "- دانش آموخته دوره تخصصی جراحی گوش، گلو، بینی و جراحی سر و گردن با اخذ درجه دانشنامه (بورد تخصصی) از دانشگاه علوم پزشکی شهید بهشتی.",
+        "- دانش آموخته دوره فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه از دانشگاه علوم پزشکی تهران با رتبه برتر.",
+        "- با بیش از ۱۵ سال تجربه در جراحی زیبایی بینی و صورت و جراحی اندوسکوپیک سینوس"
     ]
     return (
         <MainLayout siteSetting={siteSetting} {...other}>
@@ -43,20 +44,20 @@ export default function Home(props) {
                     <header
                         className={"relative flex items-center md:p-[56px] p-6 rounded-[24px] w-full h-[220px] md:h-[523px] bg-surface-container-high-light dark:bg-surface-container-high-dark"}>
                         <div className={"absolute top-10 right-10"}>
-                            <Breadcrumbs items={breadCrumbs}/>
+                            <Breadcrumbs items={breadCrumbs} />
                         </div>
                         <div>
                             <h1 className={"md:text-display-large text-display-small font-black text-on-surface-light dark:text-on-surface-dark "}>
                                 درباره ما
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"درباره ی دکتر بهزاد عابدین جراح زیبایی بینی در تهران و وبسایت رسمی ایشان بیشتر بدانید."}
+                                {"درباره دکتر بهزاد عابدین دکتر بهزاد عابدین فلوشیپ جراحی بینی و سینوس و جراح زیبایی بینی در تهران و وب سایت رسمی ایشان بیشتر بدانید."}
                             </p>
                         </div>
                     </header>
 
                     <div className={"relative rounded-[24px] overflow-hidden h-[220px] md:h-[523px]"}>
-                        <Image layout={"fill"} objectFit={"cover"} src={"/dr-abedin-3.jpeg"}/>
+                        <Image layout={"fill"} objectFit={"cover"} src={"/dr-abedin-3.jpeg"} />
                     </div>
                 </div>
                 <div className={"mt-16 container mx-auto"}>
@@ -70,7 +71,7 @@ export default function Home(props) {
                             <Link locale={false} href={"/about-us#h1"}>
                                 <div
                                     className={"hover:underline hover:underline-offset-2 p-px text-primary-light dark:text-primary-dark  font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"درباره ی دکتر بهزاد عابدین"}
+                                    {"درباره دکتر بهزاد عابدین"}
                                 </div>
                             </Link>
                         </li>
@@ -78,7 +79,7 @@ export default function Home(props) {
                             <Link locale={false} href={"/about-us#h2"}>
                                 <div
                                     className={"hover:underline hover:underline-offset-2 p-px text-primary-light  dark:text-primary-dark font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"درباره ی وبسایت"}
+                                    {"درباره وبسایت"}
                                 </div>
                             </Link>
                         </li>
@@ -101,7 +102,7 @@ export default function Home(props) {
                     </ul>
                     <h2 id={"h1"}
                         className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"درباره ی دکتر بهزاد عابدین"}
+                        {"درباره دکتر بهزاد عابدین"}
                     </h2>
 
                     {/*<Typography className={"text-on-surface-light dark:text-on-surface-dark mb-4"} type={"p"}>*/}
@@ -110,7 +111,7 @@ export default function Home(props) {
 
                     <ul className={"list-star-rtl mr-[22px]"}>
                         {drFeatures.map((item, i) => i <= 3 && <li key={i}
-                                                                   className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
+                            className={"mb-4 relative text-on-surface-variant-light dark:text-on-surface-variant-dark"}>
                             <h6>
                                 {item}
                             </h6>
@@ -121,7 +122,7 @@ export default function Home(props) {
                         {"درباره ی وبسایت"}
                     </h2>
                     <Typography className={"text-on-surface-light dark:text-on-surface-dark mb-4"} type={"p"}>
-                        {"این وب سایت، سايت رسمی دکتر بهزاد عابدین جراح و متخصص گوش، حلق، بيني مي باشد و در آن توضیحاتی در مورد جراحي  بینی و همچنین خدمات این جراح (دکتر بهزاد عابدین) وجود دارد. بازديد كنندگان از سايت می توانند با مطالعه این بخش ها اطلاعات مورد نیاز خود را جهت جراحی بینی به دست بیاورند و یا برای دریافت وقت مشاوره و نوبت گیری جهت انجام جراحی بینی و صورت و معاينات گوش و حلق و بيني در این وبسایت از طریق بخش نوبت دهی آنلاین از دکتر بهزاد عابدین اقدام نمايند."}
+                        {"این وب سایت، سایت رسمی دکتر بهزاد عابدین جراح و متخصص گوش، گلو، بینی و فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه می باشد بازديد كنندگان از سايت می توانند با مطالعه این بخش ها اطلاعات مورد نیاز خود را جهت جراحی بینی به دست بیاورند و یا برای دریافت وقت مشاوره و نوبت گیری جهت انجام جراحی بینی و صورت و معاينات گوش و حلق و بيني در این وبسایت از طریق بخش نوبت دهی آنلاین از دکتر بهزاد عابدین اقدام نمايند."}
                     </Typography>
                     <Typography type={"p"} className={"text-on-surface-light dark:text-on-surface-dark "}>
                         {"شما مي توانيد از طریق اين سايت نسبت به مشاهده تصاوير مربوط به جراحي هاي انجام شده توسط ايشان و دریافت نوبت به صورت آنلاین براي مشاوره در مورد جراحی بینی و صورت و دیگر خدمات ارائه شده از دکتر بهزاد عابدین اقدام فرماييد و همچنين اطلاعات علمي و كاربردي مفيدي در خصوص اصول و شرايط جراحي بيني، مراقبتهاي بعد از جراحي و پاسخ به بسياري از سوالات و ابهامات خود در اين خصوص را دريافت نماييد."}

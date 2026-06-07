@@ -6,9 +6,11 @@ import Image from "next/image";
 export default function GalleryDialog({openDialog, setOpenDialog, gallerySelected}) {
     const [images, setImages] = useState([])
     useEffect(()=>{
-        let imageList = []
-        for (let i = 17; i > 0; i--) {
-            imageList.push(`/dr-abedin-gallery/${i}.JPG`)
+        const jpegIndices = [4, 13, 17, 18, 19, 20, 21, 22, 23, 24, 25];
+        let imageList = [];
+        for (let i = 25; i > 0; i--) {
+            const ext = jpegIndices.includes(i) ? 'jpeg' : 'JPG';
+            imageList.push(`/dr-abedin-gallery/${i}.${ext}`);
         }
         setImages(imageList)
     },[])
