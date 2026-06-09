@@ -123,7 +123,7 @@ export default function Example(props) {
     )
     const siteSetting = {
         metaTitle: "سوالات متداول | دکتر بهزاد عابدین",
-        metaDescription: "سوالات متداول درباره ی جراحی زیبایی بینی در وبسایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران",
+        metaDescription: "سوالات متداول درباره ی جراحی زیبایی بینی در وب سایت دکتر بهزاد عابدین جراح زیبایی بینی در تهران",
         websiteURL: "https://dr-abedin.com",
         siteName: "دکتر بهزاد عابدین",
         robot: false,

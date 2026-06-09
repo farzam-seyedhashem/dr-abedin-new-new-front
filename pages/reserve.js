@@ -40,7 +40,7 @@ export default function Home(props) {
                                 دریافت نوبت
                             </h1>
                             <p className={"text-on-surface-light dark:text-on-surface-dark text-title-small md:text-title-large mt-2 font-normal"}>
-                                {"دریافت نوبت از دکتر بهزاد عابدین جراح زیبایی بینی در تهران"}
+                                {"ایام کاری مطب، روزهای شنبه و چهارشنبه از ساعت ۱۴ تا ۱۸ و پاسخگویی شنبه تا چهارشنبه در همین ساعات می باشد."}
                             </p>
 
                         </div>

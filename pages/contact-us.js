@@ -98,7 +98,7 @@ export default function Home(props) {
                                         </td>
                                         <td
                                             className={`md:px-6 px-4 font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
-                                            {"ساعت کاری مطب روزهای شنبه و چهارشنبه ساعت ۱۴ تا ۱۸ می باشد"}
+                                            {"ساعت کاری مطب روزهای شنبه و چهارشنبه ساعت ۱۴ تا ۱۸ می باشد و پاسخگویی شنبه تا چهارشنبه در همین ساعات می باشد."}
                                         </td>
 
                                     </tr>
@@ -120,7 +120,7 @@ export default function Home(props) {
                                         </td>
                                         <td
                                             className={`md:px-6 px-4  font-medium border-r border-t border-surface-variant-light dark:border-surface-variant-dark py-4 font-normal text-on-surface-light dark:text-on-surface-dark`}>
-                                            {" تهران، خیابان دکتر علی شریعتی، بالاتر از پل صدر، روبروی سفارت واتیکان، ساختمان رسا، پلاک ۱۷۳۰، طبقه اول، واحد ۲"}
+                                            {" تهران، خیابان دکتر علی شریعتی، بالاتر از پل صدر، ساختمان رسا، پلاک ۱۷۳۰، طبقه اول، واحد ۲"}
                                         </td>
                                     </tr>
                                     <tr>

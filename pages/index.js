@@ -10,7 +10,7 @@ export default function Home(props) {
     const [openVideo, setOpenVideo] = useState(false)
     const siteSetting = {
         metaTitle: "دکتر بهزاد عابدین | جراحی زیبایی بینی - جراحی رینوپلاستی - جراح زیبایی | جراح بینی در تهران",
-        metaDescription: "وبسایت رستمی دکتر بهزاد عابدین، جراح زیبایی بینی و جراح رینوپلاستی بینی در تهران",
+        metaDescription: "وب سایت رستمی دکتر بهزاد عابدین، جراح زیبایی بینی و جراح رینوپلاستی بینی در تهران",
         websiteURL: "https://dr-abedin.com",
         siteName: "دکتر بهزاد عابدین",
         robot: false,
@@ -28,7 +28,7 @@ export default function Home(props) {
                     <div
                         className={"md:mb-0 mb-4 px-6 py-6 w-full md:w-4/12 flex items-center bg-surface-container-highest-light dark:bg-surface-container-highest-dark h-fit md:h-[700px] rounded-[24px]"}>
                         <h1 className={"text-display-small md:text-display-large text-on-surface-light dark:text-on-surface-dark font-black"}>
-                            وب سایت دکتر بهزاد عابدین، متخصص گوش، گلو، بینی و جراحی سر و گردن
+                            وب سایت دکتر بهزاد عابدین، جراح و متخصص گوش، گلو، بینی و فلوشیپ جراحی بینی و سینوس
                         </h1>
                         {/*<p className={"my-6"}>*/}
                         {/*    جهت دریافت نوب بر روی دکمه دریافت نوبت کلیک نمایید.*/}

@@ -16,7 +16,7 @@ export default function Home(props) {
     ]
     const siteSetting = {
         metaTitle: "درباره ما | دکتر بهزاد عابدین",
-        metaDescription: "درباره ی دکتر بهزاد عابدین جراح زیبایی بینی در تهران و وبسایت رسمی ایشان بیشتر بدانید.",
+        metaDescription: "درباره ی دکتر بهزاد عابدین جراح زیبایی بینی در تهران و وب سایت رسمی ایشان بیشتر بدانید.",
         websiteURL: "https://dr-abedin.com",
         siteName: "دکتر بهزاد عابدین",
         robot: false,
@@ -79,7 +79,7 @@ export default function Home(props) {
                             <Link locale={false} href={"/about-us#h2"}>
                                 <div
                                     className={"hover:underline hover:underline-offset-2 p-px text-primary-light  dark:text-primary-dark font-medium hover:text-on-primary-container-light dark:hover:text-on-primary-container-dark"}>
-                                    {"درباره وبسایت"}
+                                    {"درباره وب سایت"}
                                 </div>
                             </Link>
                         </li>
@@ -119,10 +119,10 @@ export default function Home(props) {
                     </ul>
                     <h2 id={"h2"}
                         className="-mt-8  pt-24 mb-8 font-black text-on-surface-light dark:text-on-surface-dark  sm:text-4xl text-title-large">
-                        {"درباره ی وبسایت"}
+                        {"درباره ی وب سایت"}
                     </h2>
                     <Typography className={"text-on-surface-light dark:text-on-surface-dark mb-4"} type={"p"}>
-                        {"این وب سایت، سایت رسمی دکتر بهزاد عابدین جراح و متخصص گوش، گلو، بینی و فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه می باشد بازديد كنندگان از سايت می توانند با مطالعه این بخش ها اطلاعات مورد نیاز خود را جهت جراحی بینی به دست بیاورند و یا برای دریافت وقت مشاوره و نوبت گیری جهت انجام جراحی بینی و صورت و معاينات گوش و حلق و بيني در این وبسایت از طریق بخش نوبت دهی آنلاین از دکتر بهزاد عابدین اقدام نمايند."}
+                        {"این وب سایت، سایت رسمی دکتر بهزاد عابدین جراح و متخصص گوش، گلو، بینی و فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه می باشد بازديد كنندگان از سايت می توانند با مطالعه این بخش ها اطلاعات مورد نیاز خود را جهت جراحی بینی به دست بیاورند و یا برای دریافت وقت مشاوره و نوبت گیری جهت انجام جراحی بینی و صورت و معاينات گوش و حلق و بيني در این وب سایت از طریق بخش نوبت دهی آنلاین از دکتر بهزاد عابدین اقدام نمايند."}
                     </Typography>
                     <Typography type={"p"} className={"text-on-surface-light dark:text-on-surface-dark "}>
                         {"شما مي توانيد از طریق اين سايت نسبت به مشاهده تصاوير مربوط به جراحي هاي انجام شده توسط ايشان و دریافت نوبت به صورت آنلاین براي مشاوره در مورد جراحی بینی و صورت و دیگر خدمات ارائه شده از دکتر بهزاد عابدین اقدام فرماييد و همچنين اطلاعات علمي و كاربردي مفيدي در خصوص اصول و شرايط جراحي بيني، مراقبتهاي بعد از جراحي و پاسخ به بسياري از سوالات و ابهامات خود در اين خصوص را دريافت نماييد."}

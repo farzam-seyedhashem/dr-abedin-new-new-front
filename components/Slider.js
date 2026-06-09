@@ -17,7 +17,7 @@ export default function Example() {
                 img: slide1,
                 disableDescription: true,
                 title: "دکتر بهزاد عابدین",
-                description: "متخصص و جراح گوش، حلق و بینی"
+                description: "فلوشیپ جراحی بینی، سینوس و جراحی قاعده جمجمه"
             },
             {
                 img: slide2,
