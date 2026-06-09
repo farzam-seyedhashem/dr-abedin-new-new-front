@@ -195,7 +195,7 @@ export default function Home(props) {
                     <div className={" w-full overflow-hidden overflow-hidden"}>
                         <div className="relative overflow-hidden aspect-video w-full h-full">
                             <video controls className={"rounded-[16px] w-full"}>
-                                <source src={"/index-video.MP4"} />
+                                <source src={"/index-video.mp4"} />
                             </video>
                         </div>
                     </div>
